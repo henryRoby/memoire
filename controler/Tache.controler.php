@@ -22,6 +22,12 @@
             $retr_tache = new Taches();
             return $retr_tache -> listeTache();
         }
+        public function listeTachesParCategorie($cate)
+        {
+            global $retr_tache;
+            $retr_tache = new Taches();
+            return $retr_tache -> listeTacheCategorie($cate);
+        }
         //suprimer une tache
 
         public function SuppressionTache($id_tache)
@@ -42,7 +48,8 @@
                 $mise_a_jour -> setDure_tache($dure_tache);
                 $mise_a_jour -> modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache,$num_tache);
         }
+    
     }
-//  $test = new TacheControler();
-// $test->miseAjourTache(1, "a","a","as",1);
+$test = new TacheControler();
+var_dump($test->listeTachesParCategorie(2));
 ?>
