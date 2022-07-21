@@ -227,7 +227,7 @@ h1 {
                 </a>
             </li>            
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="fa fa-angle-down"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Stagiaire<b class="fa fa-angle-down"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="fa fa-fw fa-user"></i> Edit Profile</a></li>
                     <li><a href="#"><i class="fa fa-fw fa-cog"></i> Change Password</a></li>
@@ -240,16 +240,13 @@ h1 {
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> JouterNouveau <i></i></a>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> Liste<i class="fa fa-fw fa-angle-down pull-right"></i></a>
                 </li>
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class=""></i>Modifier tache<i ></i></a>
+                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class="fa fa-fw fa-star"></i>  MENU 2 <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                   
                 </li>
-                <li>
-                    <a href=""><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
-                </li>
-    
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -258,12 +255,10 @@ h1 {
           <div>
         <div class="container">
        
-            <h1>Listes des tâches pour un nouveau stagiaire</h1></br>
+            <h1>Listes des tâches à faire</h1></br>
         </div>
        <div>
-      <center>
-        <a href="Tache.vue.ajout.php" class="btn btn-success" id="ajout">Ajouter un nouveau tâche</a></br></br>
-      </center> 
+       
        </div>
         <div class="row">
             <div class="col-md-1"></div>
@@ -289,10 +284,9 @@ h1 {
             <tr>
                 <td id="contenu">'. $chaque_elements["titre_tache"].'</td>
                 <td id="contenu">'.$chaque_elements["description_tache"].'</td>
-                <td id="contenu">'.$chaque_elements["dure_tache"] .'</td>
+                <td id="contenu">'.$chaque_elements["dure_tache"] . '</td>
                 <td id="contenu">
-                    <a href="Tache.vue.modif.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-primary">Modifier</a>
-                    <a href="Tache.vue.supr.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-danger">Supprimer</a>
+                    <a href="Tache.vue.modif.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-primary"></a>
                 </td>
             </tr>');
             }

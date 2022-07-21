@@ -17,7 +17,6 @@
             $chemin_lm = "../images".basename($_FILES["lettre"]["name"]);
             move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
             $nouv_post_candidat = new CandControler();
-            
             $nouv_post_candidat->postuleCandidat($_POST["email"], $_FILES["cv"]["name"],$_FILES["lettre"]["name"]);
 
 
