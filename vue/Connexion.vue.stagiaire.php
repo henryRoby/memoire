@@ -40,16 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
         if($bool_email && $bool_pswd)
         {
-            echo('Vous êtes connecté');
-            //$ajt_avoir = new AvControler();
             $prendre_stagiaire_connecter = new StaControler();
             $stagiaire_connecter = $prendre_stagiaire_connecter -> PrendStgrConnecter($email_lors_connex, $pswd_lors_connex);
             
 
             $_SESSION["stagiaire_connecter"] = $stagiaire_connecter["id_stagiaire"];
-            var_dump($_SESSION["stagiaire_connecter"]);
-
-            // header location vers dash stagiaire
+            header("location: Dashboard.propre_stagiaire.php");
         }
         else
         {
