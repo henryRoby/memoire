@@ -91,7 +91,7 @@ h1 {
             <thead>
             <tr>
                 <th id="thead">Titre</th>
-                <th id="thead">Descriptions</th>
+                <th id="thead">Déscriptions</th>
                 <th id="thead">Durée</th>
                 <th id="thead">Actions</th>
             </tr>

@@ -182,7 +182,11 @@ h1 {
         height: auto;
        
     }
-
+#h2adimin {
+    font-weight : bolder;
+    color :white;
+    margin-top: 30px;
+}
 </style>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -226,14 +230,14 @@ h1 {
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="Tache.vue.afficher.php" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> Listes des taches <i></i></a>
+                    <a href="Tache.vue.afficher.php" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> Listes des tâches <i></i></a>
                 </li>
                 <li>
                     <a href="Candidat.vue.affich.php" data-toggle="collapse" data-target="#submenu-2"><i class=""></i>Listes des candidats<i ></i></a>
                   
                 </li>
                 <li>
-                    <a href="Tache.vue.ajout.php"><i class="fa fa-fw fa-user-plus"></i>  Ajout de nouveau tache</a>
+                    <a href="Tache.vue.ajout.php"><i class="fa fa-fw fa-user-plus"></i>  Ajout de nouveau tâche</a>
                 </li>
     
             </ul>
@@ -241,6 +245,10 @@ h1 {
         <!-- /.navbar-collapse -->
     </nav>
  </div>
-</div>
+</div></<br></br>
+<center>
+    <h2 id="h2adimin">Bienvenue sur l'administration</h2>
+</center>
+   
 </body>
 </html>
