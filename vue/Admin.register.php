@@ -86,15 +86,15 @@ body {
                         <form id="login-form" class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                             <h3 class="text-center text-info">CONNEXION</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Use admin:</label><br>
+                                <label for="username" class="text-info">Nom  d'utilisateur:</label><br>
                                 <input type="text" name="Admin" id="username" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
+                                <label for="password" class="text-info">mot de passe:</label><br>
                                 <input type="password" name="Mdp_Admin" id="password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Se connecter">
                             </div>
                             <div id="register-link" class="text-right">
