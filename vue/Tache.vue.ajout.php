@@ -1,6 +1,7 @@
 <?php
     include("../controler/Tache.controler.php");
     include("../controler/Categorie.controler.php");
+    require_once ("dashboard.admin.php");
     $erreur = "";
     $ap_categorie = new CatControler();
     $retr_categorie = $ap_categorie -> listeChaqueCategorie();
@@ -22,20 +23,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="hamza dbani">
-    <meta name="generator" content="Hugo 0.84.0">
-    <title>ajout nouveau tache</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
-    <link rel="stylesheet" href="fichier.css">
-    
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+  
 
 <style>
      body{
@@ -56,11 +45,11 @@
           font-size: 3.5rem;
         }
       }
-      .container{
+      .container-fluid{
         background-color: #dfdd;
         margin-top: 130px;
-        width: 40%;
-        border-radius : 20px;
+        width: 45%;
+        border-radius : 15px;
         box-shadow : 5px 2px 5px 3px;
        padding-bottom : 10px;
     }
@@ -73,31 +62,29 @@
     }
     .row {
         margin-top: 10px;
+        padding-right : 10px;
     }
     #desc {
         margin-bottom: 15px;
         
     }
-
+#idajouttache {
+    color : #808080;
+}
+label {
+    color : #808080;
+    padding-left : 50px;
+    text-decoration : underline;
+}
     </style>
- <link href="navbar-top.css" rel="stylesheet">
-    
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
-<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#7952b3">
 
   </head>
 </head>
 <body>
     
-<div class="container">
+<div class="container-fluid">
 <br>
-     <center><h1 >Ajouter un nouveau tache</h1></center> 
+     <center><h1 id="idajouttache">Ajouter un nouveau tache</h1></center> 
     <br> 
     
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -106,7 +93,7 @@
             <div class="row">
             <div class="col-md-4">
                     <span class="error"><?php echo $erreur;?></span>
-                    <label>Choix Categorie:</label>
+                    <label>Choix Catégorie:</label>
                 </div>
                 
                 <div class="col-md-8">
@@ -134,7 +121,7 @@
         
         <div class="row">
              <div class="col-md-4">
-             <label>Dure du tâche : </label>
+             <label>Durée du tâche : </label>
              </div>   
              <div class="col-md-8">
              <input type="text" name="dure" class="form-control"/>
@@ -144,7 +131,7 @@
       
         <div class="row" id="desc">
             <div class="col-md-4">
-            <label >Description du tache : </label>
+            <label >Déscription du tâche : </label>
             </div>
             <div class="col-md-8">
             <textarea name="description" class="form-control"></textarea>
