@@ -108,6 +108,19 @@ h1 {
             <tbody>
 
 <?php
+    $filename = 'test.pdf';
+      
+    // Header content type
+    header('Content-type: application/pdf');
+      
+    header('Content-Disposition: inline; filename="' . $filename . '"');
+      
+    header('Content-Transfer-Encoding: binary');
+      
+    header('Accept-Ranges: bytes');
+      
+    // Read the file
+    @readfile($filename);
 
             foreach ($retour_tous_candidat as $chaque_elements) 
             {
