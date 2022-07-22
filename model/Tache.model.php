@@ -124,11 +124,20 @@ require_once("connexion.php");
             $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache));
             
         }
+        //liste tache par categorie
+        public function listeTacheCategorie($id_categorie)
+        {
+            $tache_selecte_cat="SELECT * FROM taches WHERE id_categorie = ?";
+            $tache_par_categorie = $this -> connex -> prepare($tache_selecte_cat);
+            $tache_par_categorie -> execute(array($id_categorie));
+            $des_taches_specifique = $tache_par_categorie -> fetch(PDO::FETCH_ASSOC);
+            return $des_taches_specifique;
+        }
 
 
     }
-    //$test_ajout = new Taches();
-    //$test_ajout -> modifierTache(1, "titre","desc","2",1);
+    // $test_ajout = new Taches();
+    // var_dump($test_ajout -> listeTacheCategorie(2));
     // $test_ajout -> setTitre_tache("application web");
     // $test_ajout -> setDescription_tache("lorem ipsum dolor set it");
     // $test_ajout -> setDure_tache("72 h");
