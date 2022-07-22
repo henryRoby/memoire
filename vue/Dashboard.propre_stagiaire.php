@@ -1,6 +1,6 @@
 <?php
     session_start();
-    var_dump($_SESSION["stagiaire_connecter"]);
+    //var_dump($_SESSION["stagiaire_connecter"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">

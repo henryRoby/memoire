@@ -50,6 +50,6 @@
         }
     
     }
-$test = new TacheControler();
-var_dump($test->listeTachesParCategorie(2));
+//$test = new TacheControler();
+//var_dump($test->listeTachesParCategorie(2));
 ?>
