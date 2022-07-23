@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylefooter.css">
+    <link rel="stylesheet" href="../public/stylefooter.css">
     
 
     <!-- Bootstrap core CSS -->
@@ -110,8 +110,8 @@
         </li>
       </ul>
       <form class="d-flex">
-        <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp;
-        <a class="btn btn-outline-success" type="submit" href="connexion.php">connexion</a>
+        <!-- <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp; -->
+        <a class="btn btn-outline-success" type="submit" href="Connexion.vue.stagiaire.php">connexion</a>
       </form>
    
     </div>
@@ -165,7 +165,6 @@
     <div class="footer-bottom">
         <p>copyright &copy;2021 contact. designed by <span>hamza dbani</span></p>
         </div>
-      
     </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
