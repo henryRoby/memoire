@@ -6,6 +6,8 @@ $stock_email = array();
 $stock_pswd = array();
 //$id_prod = $_POST["id_produit"];
 
+$erreur = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     $email_lors_connex = $_POST["email_stagiaire"];
@@ -51,15 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         {
             if ($bool_email == false) 
             {
-                echo("raha mail diso ______ vous n'êtes pas encore membre; inscrivez-vous d'abord !");
+                $erreur="vous n'êtes pas encore membre; inscrivez-vous d'abord !";
             }
             elseif ($bool_email == true && $bool_pswd == false) 
             {
-                echo("Mot de passe incorrect");
+              $erreur="Mot de passe incorrect";
             }
             else
             {
-                echo("vous n'êtes pas encore membre; inscrivez-vous d'abord !");
+              $erreur="vous n'êtes pas encore membre; inscrivez-vous d'abord !";
             }
             
         }
@@ -167,7 +169,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <center>
              <input type="submit" class="btn btn-success" name="submit" value="Se connecter">
         </center>   
-    </div>    
+    </div> 
+    
+    <span>
+      <?php 
+      echo $erreur;
+      ?>
+    </span>
      </form> 
   </div>      
   
@@ -175,8 +183,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-
 
   </body>
 </html>
