@@ -37,6 +37,10 @@
             $retr_tache -> supprimerTaches($id_tache);
         }
         //modification
+        public function tacheAModifier($num_ta){
+            $test = new Taches();
+            return $test -> listeTacheModifier($num_ta);
+        }
 
         
         public function miseAjourTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache)
@@ -50,6 +54,6 @@
         }
     
     }
-$test = new TacheControler();
-var_dump($test->listeTachesParCategorie(2));
+// $test = new TacheControler();
+// var_dump($test->listeTachesParCategorie(2));
 ?>

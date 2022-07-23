@@ -31,7 +31,7 @@
     else
     {
         
-        $num_tache = $_REQUEST['num_tache'];
+        $num_tache = $_GET['num_tache'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
             //echo("io fa nety amzay oh" . $_POST['marque_produit']);
@@ -43,7 +43,7 @@
             else
             {                
                 $modif_tache -> miseAjourTache($_POST["id_categorie"], $_POST["titre_tache"], $_POST["description_tache"],
-                $_POST["dure_tache"], $_GET["num_tache"]);
+                $_POST["dure_tache"], $num_tache);
                 header('Location:Tache.vue.afficher.php');
             }
         }  
@@ -59,8 +59,12 @@
     <title>Modification produit</title>
 </head>
 <body>
+    
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?num_tache=<?php echo $num_tache ?>">
         <span class="error"><?php echo $erreur;?></span>
+        <?php
+var_dump($num_tache); 
+?>
         <label>Choix Categorie :</label>
         <select name="id_categorie">
 <?php
@@ -70,6 +74,9 @@
     }
 ?>
         </select>
+        <?php
+var_dump($titre_tache); 
+?>
         <br/><br/>
         <label>Titre du tache : </label>
         <input type="text" name="titre_tache" value="<?php echo !empty($titre_tache)?$titre_tache:'';?>"/>

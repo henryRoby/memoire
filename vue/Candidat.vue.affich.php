@@ -108,26 +108,26 @@ h1 {
             <tbody>
 
 <?php
-    $filename = 'test.pdf';
+    // $filename = 'test.pdf';
       
-    // Header content type
-    header('Content-type: application/pdf');
+    // // Header content type
+    // header('Content-type: application/pdf');
       
-    header('Content-Disposition: inline; filename="' . $filename . '"');
+    // header('Content-Disposition: inline; filename="' . $filename . '"');
       
-    header('Content-Transfer-Encoding: binary');
+    // header('Content-Transfer-Encoding: binary');
       
-    header('Accept-Ranges: bytes');
+    // header('Accept-Ranges: bytes');
       
-    // Read the file
-    @readfile($filename);
+    // // Read the file
+    // @readfile($filename);
 
             foreach ($retour_tous_candidat as $chaque_elements) 
             {
             echo('
             <tr>
                 <td id="contenu">'. $chaque_elements["email_candidat"].'</td>
-                <td id="contenu">'.$chaque_elements["cv_candidat"] .'</td>
+                <td id="contenu"><a href="quelquechose">'.$chaque_elements["cv_candidat"] .'</a></td>
                 <td id="contenu">'.$chaque_elements["lm_candidat"] . '</td>
                 <td id="contenu">
                     <a href="" class="btn btn-info">Accepter</a>
