@@ -17,7 +17,6 @@
             $candidat -> setCv_candidat($cv);
             $candidat -> setLm_candidat($lm);
             $candidat -> ajoutCandidat();
-
         }
 
 
