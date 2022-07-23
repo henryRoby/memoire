@@ -7,10 +7,8 @@ body{
     background: #e4e0e0;
 }
 footer{
-    position: absolute;
-    bottom: 5;
-    left: 5;
-    right: 5;
+    
+    
     background-color: #363739 !important;
     height: auto;
     width: 100vw;
@@ -19,7 +17,7 @@ footer{
     color: #fff;
 }
 .footer-content{
-    display: flex;
+    
     align-items: center;
     justify-content: center;
     flex-direction: column;
