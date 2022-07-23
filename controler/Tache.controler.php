@@ -54,6 +54,4 @@
         }
     
     }
-// $test = new TacheControler();
-// var_dump($test->listeTachesParCategorie(2));
 ?>
