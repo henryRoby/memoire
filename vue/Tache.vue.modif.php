@@ -33,7 +33,7 @@
     else
     {
         
-        $num_tache = $_REQUEST['num_tache'];
+        $num_tache = $_GET['num_tache'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
             //echo("io fa nety amzay oh" . $_POST['marque_produit']);
@@ -45,7 +45,7 @@
             else
             {                
                 $modif_tache -> miseAjourTache($_POST["id_categorie"], $_POST["titre_tache"], $_POST["description_tache"],
-                $_POST["dure_tache"], $_GET["num_tache"]);
+                $_POST["dure_tache"], $num_tache);
                 header('Location:Tache.vue.afficher.php');
             }
         }  
@@ -109,6 +109,39 @@ label {
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+    
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?num_tache=<?php echo $num_tache ?>">
+        <span class="error"><?php echo $erreur;?></span>
+        <?php
+var_dump($num_tache); 
+?>
+        <label>Choix Categorie :</label>
+        <select name="id_categorie">
+<?php
+    foreach ($retour_categorie as $chaque_elements) 
+    {
+        echo('<option value =" ' .$chaque_elements['id_categorie'] . ' ">' .$chaque_elements['types'] . '</option>');
+    }
+?>
+        </select>
+        <?php
+var_dump($titre_tache); 
+?>
+        <br/><br/>
+        <label>Titre du tache : </label>
+        <input type="text" name="titre_tache" value="<?php echo !empty($titre_tache)?$titre_tache:'';?>"/>
+        <br/><br/>
+        <label >Description du tache : </label>
+        <textarea name="description_tache" value="" ><?php echo !empty($description_tache)?$description_tache:'';?></textarea>
+        <br/><br/>
+        
+        <label>Durée du tache : </label>
+        <input type="text" name="dure_tache" value="<?php echo !empty($dure_tache)?$dure_tache:'';?>"/>
+        <br/><br/>
+        <button type="submit">Modifier</button>
+    </form>   
+=======
     <div class="container" id="container-modif">
 <center><h1 id="idmodif">Modification du tâche</h1></center> 
 
@@ -159,5 +192,6 @@ label {
         </center>
   </form>
                 </div>
+>>>>>>> 1f2c2ef302da85fedefe29eb77d443d7b5d0021c
 </body>
 </html>

@@ -23,13 +23,31 @@
             foreach ($tous_les_candidat as $chaque_candidat) {
               array_push($tab_email_candidat, $chaque_candidat['email_candidat']);
             }
-            echo(count($tous_les_candidat));
-            // $chemin_cv = "../public/src/cv/".basename($_FILES["cv"]["name"]);
-            // move_uploaded_file($_FILES["cv"]["tmp_name"],$chemin_cv);
-            // $chemin_lm = "../public/src/lm/".basename($_FILES["lettre"]["name"]);
-            // move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
-            // $post_candidat -> postuleCandidat($_POST["email"], $_FILES["cv"]["name"], $_FILES["lettre"]["name"]);
-            // header("Location:../pages/accueil.php ");
+            echo(count($tab_email_candidat));
+            var_dump($tab_email_candidat);
+            $bool_email = false;
+            $compter = 0;
+            while($compter < count($tab_email_candidat))
+            {
+              if($tab_email_candidat[$compter] === $_POST["email"])
+              {
+                $bool_email = true;
+              }
+              $compter ++;
+            }
+            if($bool_email)
+            {
+              $erreur = "vous avez deja postulé";
+            }
+            else
+            {
+              $chemin_cv = "../public/src/cv/".basename($_FILES["cv"]["name"]);
+              move_uploaded_file($_FILES["cv"]["tmp_name"],$chemin_cv);
+              $chemin_lm = "../public/src/lm/".basename($_FILES["lettre"]["name"]);
+              move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
+              $post_candidat -> postuleCandidat($_POST["email"], $_FILES["cv"]["name"], $_FILES["lettre"]["name"]);
+              header("Location:../pages/accueil.php ");
+            }
           }
         }
     }  
@@ -106,15 +124,15 @@
   <br>
      <center><h1 >Formulaire de candidature</h1></center> 
     <br>
-    <span>
-      <?php
-        echo $erreur;  
-      ?>
-    </span>
+    
   <div class="myform">
       
      <form class="" id="" method="post"  enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-         
+     <span>
+      <?php
+        echo $erreur;  
+      ?>
+    </span> 
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">

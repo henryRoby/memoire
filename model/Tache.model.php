@@ -106,7 +106,7 @@ require_once("connexion.php");
 
         public function listeTacheModifier($num_tache)
         {
-            $modif = "SELECT * FROM taches INNER JOIN categories ON Taches.id_categorie = categories.id_categorie WHERE id_categorie = ?";
+            $modif = "SELECT * FROM taches INNER JOIN categories ON Taches.id_categorie = categories.id_categorie WHERE num_tache = ?";
             $retour_modifier_tache = $this -> connex -> prepare($modif);
             $retour_modifier_tache -> execute(array($num_tache));
             $donne_db = $retour_modifier_tache -> fetch(PDO::FETCH_ASSOC);
@@ -127,7 +127,7 @@ require_once("connexion.php");
         //liste tache par categorie
         public function listeTacheCategorie($id_categorie)
         {
-            $tache_selecte_cat="SELECT * FROM taches WHERE id_categorie = ?";
+            $tache_selecte_cat="SELECT * FROM taches INNER JOIN categories ON taches.id_categorie = categories.id_categorie WHERE taches.id_categorie = ?";
             $tache_par_categorie = $this -> connex -> prepare($tache_selecte_cat);
             $tache_par_categorie -> execute(array($id_categorie));
             $des_taches_specifique = $tache_par_categorie -> fetch(PDO::FETCH_ASSOC);
@@ -136,8 +136,8 @@ require_once("connexion.php");
 
 
     }
-    // $test_ajout = new Taches();
-    // var_dump($test_ajout -> listeTacheCategorie(2));
+    $test_ajout = new Taches();
+    var_dump($test_ajout -> listeTacheCategorie(1));
     // $test_ajout -> setTitre_tache("application web");
     // $test_ajout -> setDescription_tache("lorem ipsum dolor set it");
     // $test_ajout -> setDure_tache("72 h");
