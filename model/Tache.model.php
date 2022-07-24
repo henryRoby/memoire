@@ -122,7 +122,7 @@ require_once("connexion.php");
         public function modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $types, $num_tache)
         {
             $modif = "UPDATE taches SET id_categorie = ?, titre_tache = ?,
-            description_tache = ?,dure_tache = ?, types = ? WHERE num_tache = ?";
+            description_tache = ?, dure_tache = ?, types = ? WHERE num_tache = ?";
             $preparation_modif_tache = $this -> connex -> prepare($modif);
             $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $types, $num_tache));
             
