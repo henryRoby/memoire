@@ -106,22 +106,25 @@ require_once("connexion.php");
 
         public function listeTacheModifier($num_tache)
         {
-            $modif = "SELECT * FROM taches INNER JOIN categories ON Taches.id_categorie = categories.id_categorie WHERE num_tache = ?";
-            $retour_modifier_tache = $this -> connex -> prepare($modif);
-            $retour_modifier_tache -> execute(array($num_tache));
-            $donne_db = $retour_modifier_tache -> fetch(PDO::FETCH_ASSOC);
+            echo("test"); 
+            $modif = "SELECT * FROM taches INNER JOIN categories ON taches.id_categorie = categories.id_categorie WHERE num_tache = ?";
+            $retrMod = $this -> connex -> prepare($modif);
+            $retrMod -> execute(array($num_tache));
+            $donne_db = $retrMod -> fetch(PDO::FETCH_ASSOC);
             $this -> num_tache = $donne_db['num_tache'];
             $this -> id_categorie = $donne_db['id_categorie'];
             $this -> titre_tache = $donne_db['titre_tache'];
             $this -> description_tache = $donne_db['description_tache'];
-            $this -> dure_tache = $donne_db['dure_tache'];    
+            $this -> dure_tache = $donne_db['dure_tache'];
+            $this -> types = $donne_db['types'];
+            var_dump($donne_db);  
         }
-        public function modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache)
+        public function modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $types, $num_tache)
         {
             $modif = "UPDATE taches SET id_categorie = ?, titre_tache = ?,
-            description_tache = ?,dure_tache = ? WHERE num_tache = ?";
+            description_tache = ?,dure_tache = ?, types = ? WHERE num_tache = ?";
             $preparation_modif_tache = $this -> connex -> prepare($modif);
-            $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache));
+            $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $types, $num_tache));
             
         }
         //liste tache par categorie
@@ -137,7 +140,7 @@ require_once("connexion.php");
 
     }
     $test_ajout = new Taches();
-    var_dump($test_ajout -> listeTacheCategorie(1));
+    var_dump($test_ajout -> listeTacheModifier(1));
     // $test_ajout -> setTitre_tache("application web");
     // $test_ajout -> setDescription_tache("lorem ipsum dolor set it");
     // $test_ajout -> setDure_tache("72 h");
