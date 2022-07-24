@@ -1,7 +1,7 @@
 <?php
     include("../controler/Tache.controler.php");
     include("../controler/Categorie.controler.php");
-    require_once ("dashboard.admin.php");
+    //require_once ("dashboard.admin.php");
 
     $erreur = "";
     $num_tache = 0;
@@ -12,28 +12,19 @@
     $instance_categorie = new CatControler();
     $retour_categorie = $instance_categorie -> listeChaqueCategorie();
     $modif_tache = new TacheControler();
-    
-    
-
-
-    $select = $modif_tache -> listeTousTaches();
-
-    foreach ($select as $chaque_tache) 
-    {
-        $id_categorie = $chaque_tache['id_categorie'];
-        $titre_tache = $chaque_tache['titre_tache'];
-        $description_tache = $chaque_tache['description_tache'];
-        $dure_tache = $chaque_tache['dure_tache'];
-    }
-
     if(empty($_GET['num_tache']))
     {
         echo('identifiant introuvable');
     }
     else
     {
-        
-        $num_tache = $_GET['num_tache'];
+        $select = $modif_tache -> tacheAModifier($_REQUEST['num_tache']);
+        $id_categorie = $select['id_categorie'];
+        $titre_tache = $select['titre_tache'];
+        $description_tache = $select['description_tache'];
+        $dure_tache = $select['dure_tache'];
+
+        $num_tache = $_REQUEST['num_tache'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
             //echo("io fa nety amzay oh" . $_POST['marque_produit']);
@@ -45,7 +36,7 @@
             else
             {                
                 $modif_tache -> miseAjourTache($_POST["id_categorie"], $_POST["titre_tache"], $_POST["description_tache"],
-                $_POST["dure_tache"], $num_tache);
+                $_POST["dure_tache"], $_GET['num_tache']);
                 header('Location:Tache.vue.afficher.php');
             }
         }  
