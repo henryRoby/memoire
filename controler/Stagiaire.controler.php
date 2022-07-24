@@ -32,6 +32,5 @@
             return $get_cli -> getStgrConnecter($id_stag);
         }
     }
-    // $test = new StaControler();
-     //var_dump($test->suisConnecter(1));
+
 ?>
