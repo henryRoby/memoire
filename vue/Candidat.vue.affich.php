@@ -85,7 +85,7 @@ h1 {
             echo('
             <tr>
                 <td id="contenu">'. $chaque_elements["email_candidat"].'</td>
-                <td id="contenu">'.$chaque_elements["cv_candidat"] .'</td>
+                <td id="contenu"><a href="quelquechose">'.$chaque_elements["cv_candidat"] .'</a></td>
                 <td id="contenu">'.$chaque_elements["lm_candidat"] . '</td>
                 <td id="contenu">
                     <a href="" class="btn btn-info">Accépter</a>&nbsp;&nbsp;&nbsp;

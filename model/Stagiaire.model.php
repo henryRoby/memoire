@@ -155,7 +155,7 @@
     }
 
     // $test = new Stagiaires();
-    // $test -> setId_categorie('1');
+    // var_dump($test -> getStgrConnecter(1));
     // $test -> setNom_stgiaire("test");
     // $test -> setPrenom_stagiaire("test");
     // $test -> setEmail_stagiaire("test@gmail.com");

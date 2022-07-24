@@ -33,7 +33,7 @@
     else
     {
         
-        $num_tache = $_REQUEST['num_tache'];
+        $num_tache = $_GET['num_tache'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
         {
             //echo("io fa nety amzay oh" . $_POST['marque_produit']);
@@ -45,7 +45,7 @@
             else
             {                
                 $modif_tache -> miseAjourTache($_POST["id_categorie"], $_POST["titre_tache"], $_POST["description_tache"],
-                $_POST["dure_tache"], $_GET["num_tache"]);
+                $_POST["dure_tache"], $num_tache);
                 header('Location:Tache.vue.afficher.php');
             }
         }  
@@ -109,7 +109,7 @@ label {
     </style>
 </head>
 <body>
-    <div class="container" id="container-modif">
+<div class="container" id="container-modif">
 <center><h1 id="idmodif">Modification du tâche</h1></center> 
 
     <div class="container-fluid">
@@ -158,6 +158,6 @@ label {
             <button type="submit" class="btn btn-primary">Modifier</button>
         </center>
   </form>
-                </div>
+</div>
 </body>
 </html>
