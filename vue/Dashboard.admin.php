@@ -1,18 +1,4 @@
-<?php
-    include("../controler/Tache.controler.php");
-    class TacheVue
-    {
-
-        public $titre_tache= "";
-        public $description_tache = "";
-        public $dure_tache ="";
-        public function affichageTaches()
-        {
-            $aff = new TacheControler();
-            $retour_tous_tache = $aff -> listeTousTaches();
-            
-?>
-
+<html>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <style>
@@ -22,6 +8,11 @@
         margin-top: 50px;
     }
     /*html, body, #wrapper, #page-wrapper {height: 100%; overflow: hidden;}*/
+}
+body{
+    background: url(../images/fond.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #wrapper {
@@ -124,21 +115,14 @@
     border-bottom: 1px rgba(0,0,0,.3) solid;
 }
 
-.side-nav>li>ul>li>a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    /*color: #999;*/
-    color: #fff;    
-}
+
 
 .side-nav>li>ul>li>a:hover {
     color: #fff;
 }
 
 .navbar .nav > li > a > .label {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
+  
   border-radius: 50%;
   position: absolute;
   top: 14px;
@@ -198,11 +182,17 @@ h1 {
         height: auto;
        
     }
-
+#h2adimin {
+    font-weight : bolder;
+    color :white;
+    margin-top: 30px;
+}
 </style>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
+<body>
+    
 
 <div id="throbber" style="display:none; min-height:120px;"></div>
 <div id="noty-holder"></div>
@@ -240,79 +230,25 @@ h1 {
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> JouterNouveau <i></i></a>
+                    <a href="Tache.vue.afficher.php" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> Listes des tâches <i></i></a>
                 </li>
                 <li>
-                    <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class=""></i>Modifier tache<i ></i></a>
+                    <a href="Candidat.vue.affich.php" data-toggle="collapse" data-target="#submenu-2"><i class=""></i>Listes des candidats<i ></i></a>
                   
                 </li>
                 <li>
-                    <a href=""><i class="fa fa-fw fa-user-plus"></i>  MENU 3</a>
+                    <a href="Tache.vue.ajout.php"><i class="fa fa-fw fa-user-plus"></i>  Ajout de nouveau tâche</a>
                 </li>
     
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </nav>
-    <div class="container">
-          <div>
-        <div class="container">
-       
-            <h1>Listes des tâches pour un nouveau stagiaire</h1></br>
-        </div>
-       <div>
-      <center>
-        <a href="Tache.vue.ajout.php" class="btn btn-success" id="ajout">Ajouter un nouveau tâche</a></br></br>
-      </center> 
-       </div>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-
-        <div class="panel-body">
-        <table class="tablecontent">
-            <thead id="thead">
-            <tr>
-                <th>Titre</th>
-                <th>Descriptions</th>
-                <th>Durée</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-                
-            
-<?php
-            foreach ($retour_tous_tache as $chaque_elements) 
-            {
-            echo('
-            <tr>
-                <td id="contenu">'. $chaque_elements["titre_tache"].'</td>
-                <td id="contenu">'.$chaque_elements["description_tache"].'</td>
-                <td id="contenu">'.$chaque_elements["dure_tache"] .'</td>
-                <td id="contenu">
-                    <a href="Tache.vue.modif.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-primary">Modifier</a>
-                    <a href="Tache.vue.supr.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-danger">Supprimer</a>
-                </td>
-            </tr>');
-            }
-?>
-</tbody>
-        </table>
-        </div>
-            
-            <div class="col-md-1">
-                
-            </div>
-        </div>
-        
-    </div>
-<?php
-        }
-        
-    }
-    $liste = new TacheVue();
-    $liste -> affichageTaches();
-?>
-    </div>
-</div>
+ </div>
+</div></<br></br>
+<center>
+    <h2 id="h2adimin">Bienvenue sur l'administration</h2>
+</center>
+   
+</body>
+</html>

@@ -46,16 +46,7 @@
     #logo{
         width: 200px;
         height: auto;
-        /* object-fit: cover;
-        object-position: bottom top;
-        box-shadow: 0 0 10px white;
-        border-radius: 8px;
-        display: block;
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        width: 50%;
-        opacity: 1; */
+      
     }
     
     #info h1{
@@ -80,7 +71,11 @@
         .container-fluid{
             text-align: center;
         }
+    footer{
+      background-color:#212121;
+      color: #fff;
     }
+  
 
     </style>
 
@@ -110,8 +105,8 @@
         </li>
       </ul>
       <form class="d-flex">
-        <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp;
-        <a class="btn btn-outline-success" type="submit" href="connexion.php">connexion</a>
+        <!-- <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp; -->
+        <a class="btn btn-outline-success" type="submit" href="Connexion.vue.stagiaire.php">connexion</a>
       </form>
    
     </div>
@@ -145,29 +140,62 @@
   </div>
     <br><br><br><br><br><br>  
     
-    <footer>
-    <div class="footer-content">
-        <h3>Contact</h3>
+<footer class="bg-dark text-center text-white">
+
+<h3>Contact</h3>
+        <center>
         <p>
         Al irfane 1 complexe Doha route boukhalef, Tanger<br/>
                   90000 / Tanger<br/>
                 N° Tél : 06 19 24 23 92 <br/>
                  recrutement@gmail.com<br/>
         </p>
-        <ul class="social-links">
-        <li><a href="https://www.facebook.com/hamzahamza.dbani"><i class="fab fa-facebook-f"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="https://www.instagram.com/hamza_dbani/"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/hamza-dbani-a53071193/"><i class="fab fa-linkedin-in"></i></a></li>
-        </ul>
-        </div>
-    <div class="footer-bottom">
-        <p>copyright &copy;2021 contact. designed by <span>hamza dbani</span></p>
-        </div>
-      
-    </footer>
+        </center>
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
 
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://henryroby.github.io/Portfolio">@henri</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 

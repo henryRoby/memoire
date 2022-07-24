@@ -72,12 +72,11 @@
   
   <center>
     <h3>Votre demande est en cours !!!! </h3></br></br>
-   <a href="../pages/accueil.php" class="btn btn-primary">Vers la page d'accueil</a></center>
+   <a href="http://localhost/memoire/vue/accueil.php" class="btn btn-primary">Vers la page d'accueil</a></center>
   </div>
 
  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
-})
 
 </script>
 

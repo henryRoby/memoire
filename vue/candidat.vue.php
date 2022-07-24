@@ -1,25 +1,54 @@
-
 <?php
     include("../controler/Candidat.controler.php");
     $post_candidat = new CandControler();
-    // $retr_categorie = $ap_categorie -> listeChaqueCategorie();
+    $erreur = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        //echo("io fa nety amzay oh" . $_POST['marque_produit']);
         if (empty($_POST["email"]) AND empty($_FILES["cv"]["name"])AND empty($_FILES["lettre"]["name"]))
         {
             echo("le champ est obligatoire");
         }
         else
         { 
-            $chemin_cv = "../images".basename($_FILES["cv"]["name"]);
-            move_uploaded_file($_FILES["cv"]["tmp_name"],$chemin_cv);
-            $chemin_lm = "../images".basename($_FILES["lettre"]["name"]);
-            move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
-            $nouv_post_candidat = new CandControler();
-            $nouv_post_candidat->postuleCandidat($_POST["email"], $_FILES["cv"]["name"],$_FILES["lettre"]["name"]);
-
-
+          $longcv = strlen($_FILES["cv"]["name"]);
+          $longlm = strlen($_FILES["lettre"]["name"]);
+          if($longcv >= 20 OR $longlm >= 20)
+          {
+            $erreur = "nom de fichier tres long";
+          }
+          else
+          {
+            $tous_les_candidat = $post_candidat -> ParcCandidat();
+            $tab_email_candidat = array();
+            foreach ($tous_les_candidat as $chaque_candidat) {
+              array_push($tab_email_candidat, $chaque_candidat['email_candidat']);
+            }
+            echo(count($tab_email_candidat));
+            var_dump($tab_email_candidat);
+            $bool_email = false;
+            $compter = 0;
+            while($compter < count($tab_email_candidat))
+            {
+              if($tab_email_candidat[$compter] === $_POST["email"])
+              {
+                $bool_email = true;
+              }
+              $compter ++;
+            }
+            if($bool_email)
+            {
+              $erreur = "vous avez deja postulé";
+            }
+            else
+            {
+              $chemin_cv = "../public/src/cv/".basename($_FILES["cv"]["name"]);
+              move_uploaded_file($_FILES["cv"]["tmp_name"],$chemin_cv);
+              $chemin_lm = "../public/src/lm/".basename($_FILES["lettre"]["name"]);
+              move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
+              $post_candidat -> postuleCandidat($_POST["email"], $_FILES["cv"]["name"], $_FILES["lettre"]["name"]);
+              header("Location:accueil.php ");
+            }
+          }
         }
     }  
 ?>
@@ -94,11 +123,16 @@
   <div class="container">
   <br>
      <center><h1 >Formulaire de candidature</h1></center> 
-    <br> 
+    <br>
+    
   <div class="myform">
       
      <form class="" id="" method="post"  enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-         
+     <span>
+      <?php
+        echo $erreur;  
+      ?>
+    </span> 
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">

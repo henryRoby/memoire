@@ -32,7 +32,6 @@
             return $get_cli -> getStgrConnecter($id_stag);
         }
     }
-    // $test = new StaControler();
-    // $test->nouvauStagiaire("1", "feno", "be", "test@gmail.com", 
-    // "Tana","jpg.png");
+     $test = new StaControler();
+     var_dump($test->suisConnecter(1));
 ?>

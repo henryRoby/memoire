@@ -18,7 +18,7 @@
 
         
             <!-- <script>
-                alert("Vous n'êtes pas administrateur du site")
+                alert("Vous n'êtes pas administrateur du site") 
             </script> -->
         <?php   
         header("location: Admin.register.php");
