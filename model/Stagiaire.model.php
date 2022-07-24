@@ -140,9 +140,9 @@
         }
         public function getStgrConnecter($id_stagiaire)
         {
-            $select_connecte = "SELECT * FROM stagiaires WHERE id_stagiaire = $id_stagiaire";
+            $select_connecte = "SELECT * FROM stagiaires WHERE id_stagiaire = ?";
             $select_connecte_stgr = $this -> connex -> prepare($select_connecte);
-            $select_connecte_stgr -> execute();
+            $select_connecte_stgr -> execute(array($id_stagiaire));
             return $select_connecte_stgr -> fetch(PDO::FETCH_ASSOC);
         }
         public function SelectStgrLorsConnex($email_stagiaire, $mdp_stagiaire)

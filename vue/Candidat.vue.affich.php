@@ -18,7 +18,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>tâches</title>
+    <title>Candidats</title>
 <style> 
       .lignecolor{
         background: white;
