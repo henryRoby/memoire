@@ -86,32 +86,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   </head>
   <body>
-
-
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <div class="container-fluid">
-
-     
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <img id="logo" src="../images/randev.png" alt="">
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="accueil.php"s>Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="candidature.php">Zone de candidature</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <!-- <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp; -->
-        <a class="btn btn-outline-success" type="submit" href="Connexion.vue.stagiaire.php">connexion</a>
-      </form>
-   
-    </div>
-  </div>
-</nav>
+<?php include('Menu.php')?>
 <br/>
 <div class="container">
       <div class="row" id="info">
@@ -139,63 +114,7 @@
    </div>
   </div>
     <br><br><br><br><br><br>  
-    
-<footer class="bg-dark text-center text-white">
-
-<h3>Contact</h3>
-        <center>
-        <p>
-        Al irfane 1 complexe Doha route boukhalef, Tanger<br/>
-                  90000 / Tanger<br/>
-                N° Tél : 06 19 24 23 92 <br/>
-                 recrutement@gmail.com<br/>
-        </p>
-        </center>
-  <!-- Grid container -->
-  <div class="container p-4 pb-0">
-    <!-- Section: Social media -->
-    <section class="mb-4">
-      <!-- Facebook -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-
-      <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-
-      <!-- Google -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-
-      <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-
-      <!-- Linkedin -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-
-      <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-github"></i
-      ></a>
-    </section>
-    <!-- Section: Social media -->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="https://henryroby.github.io/Portfolio">@henri</a>
-  </div>
-  <!-- Copyright -->
-</footer>
+    <?php include('Footer.php')?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 
