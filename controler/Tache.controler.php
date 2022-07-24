@@ -54,4 +54,6 @@
         }
     
     }
+    // $test = new TacheControler();
+    // var_dump($test -> tacheAModifier(2));
 ?>
