@@ -90,11 +90,12 @@ require_once("connexion.php");
         $prep -> execute(array($id_candidat));
         
     }
+    
 
     }
     
-        //$test_ajout = new Candidats();
-        //$test_ajout->supprimerCandidat(1);
+        // $test_ajout = new Candidats();
+        // $test_ajout->supprimerCandidat(8);
 
     // $test_ajout -> setEmail_candidat("test@gmail.com");
     // $test_ajout -> setCv_candidat("cv.pdf");
