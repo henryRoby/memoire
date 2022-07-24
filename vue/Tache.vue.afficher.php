@@ -71,6 +71,9 @@ h1 {
     color: white;
     margin-top : 80px;
 }
+body {
+   overflow-x: hidden; 
+}
     </style>
 
 </head>

@@ -82,6 +82,15 @@ require_once("connexion.php");
             return $this -> connex -> query("SELECT * FROM candidats");    
         }
 
+        public function Getidcandidat($id)
+        { 
+            $candidat = "SELECT * FROM candidats WHERE id_candidat = ?";
+            $candidatunique =  $this -> connex -> prepare($candidat);
+            $candidatunique -> execute(array($id));
+            return $candidatunique -> fetch(PDO::FETCH_ASSOC);
+
+        }
+
           //suppression candidat
     public function supprimerCandidat($id_candidat)
     {
@@ -94,8 +103,8 @@ require_once("connexion.php");
 
     }
     
-        // $test_ajout = new Candidats();
-        // $test_ajout->supprimerCandidat(8);
+        //$test_ajout = new Candidats();
+       //var_dump( $test_ajout->Getidcandidat(3));
 
     // $test_ajout -> setEmail_candidat("test@gmail.com");
     // $test_ajout -> setCv_candidat("cv.pdf");
