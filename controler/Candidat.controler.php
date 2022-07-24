@@ -19,6 +19,13 @@
             $candidat -> ajoutCandidat();
         }
 
+        // supprimer candidat
+        public function SuppressionCandidat($id_candidat)
+        {
+            global $retr_candidat;
+            $retr_candidat = new Candidats();
+            $retr_candidat -> supprimerCandidat($id_candidat);
+        }
 
         // public function PrendClientConnecter($email, $mdp)
         // {
@@ -31,7 +38,7 @@
         //     return $get_cli -> getClientConnecter($num_cli);
         // }
     }
-//     $test = new CandControler();
-//     $test->postuleCandidat("test@gmail.com", 
-//    "cv.pdf","lm.pdf");
+    // $test = new CandControler();
+    // $test->SuppressionCandidat(8)
+
 ?>

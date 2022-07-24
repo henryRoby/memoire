@@ -79,6 +79,7 @@ h1 {
 
 <?php
 
+echo '<iframe src="C:/xampp/htdocs/memoire/vue/test.pdf" width="100%" style="height:100%"></iframe>';
 
             foreach ($retour_tous_candidat as $chaque_elements) 
             {
@@ -89,7 +90,7 @@ h1 {
                 <td id="contenu">'.$chaque_elements["lm_candidat"] . '</td>
                 <td id="contenu">
                     <a href="" class="btn btn-info">Accépter</a>&nbsp;&nbsp;&nbsp;
-                    <a href="" class="btn btn-danger">Réfuser</a>
+                    <a href="Candidat.vue.refuser.php?id_candidat='.$chaque_elements["id_candidat"].'" class="btn btn-danger">Réfuser</a>
                 </td>
             </tr>');
             }
@@ -112,3 +113,5 @@ h1 {
     $liste -> affichageCandidat();
 ?>
 </body>
+
+
