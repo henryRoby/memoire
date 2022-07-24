@@ -74,18 +74,15 @@ h1 {
             </tr>
             </thead>
             <tbody>
+<?php
+         foreach ($retour_tous_candidat as $chaque_elements) 
 
-        <?php
-
-            //echo '<iframe src="test.pdf" width="100%" style="height:100%"></iframe>';
-
-            foreach ($retour_tous_candidat as $chaque_elements) 
             {
             echo('
             <tr>
                 <td id="contenu">'. $chaque_elements["email_candidat"].'</td>
-                <td id="contenu"><a href="quelquechose">'.$chaque_elements["cv_candidat"] .'</a></td>
-                <td id="contenu">'.$chaque_elements["lm_candidat"] . '</td>
+                <td id="contenu"><a href="Affichage.pdf.php?cv_candidat='.$chaque_elements["cv_candidat"].'" target="_blank">'.$chaque_elements["cv_candidat"] .'</a></td>
+                <td id="contenu"><a href="Affichage.lm.php?lm_candidat='.$chaque_elements["lm_candidat"].'" target="_blank">'.$chaque_elements["lm_candidat"] .'</a></td>
                 <td id="contenu">
                     <a href="Confirme.rdv.vue.php?id_candidat='.$chaque_elements["id_candidat"].'" class="btn btn-info">Accépter</a>&nbsp;&nbsp;&nbsp;
 
