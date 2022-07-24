@@ -24,8 +24,6 @@
 <html lang="en">
 <head>
 </head>
-  
-
 <style>
      body{
     background: url(../images/fond.jpg);

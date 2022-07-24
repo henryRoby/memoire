@@ -1,9 +1,13 @@
 <?php
     include("../controler/Rendezvous.controler.php");
     include("../controler/Candidat.controler.php");
+
     $erreur = "";
     $ap_candidat = new CandControler();
-    $retr_candidat = $ap_candidat -> ParcCandidat();
+  
+    $id = $_GET["id_candidat"];
+    $retr_candidat = $ap_candidat -> Getuniquecandidat($id);
+    
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         if (empty($_POST["date"]) AND empty($_POST["heure"]))
@@ -14,9 +18,13 @@
         {
             $nouv_ajout_rdv = new RdvControler();
             
-            $nouv_ajout_rdv->ConfirmationRdv($_POST["id_cand"], $_POST["date"], $_POST["heure"]);
+            $nouv_ajout_rdv->ConfirmationRdv($_POST["id"], $_POST["date"], $_POST["heure"]);
+
+            
+            header('Location: Candidat.vue.affich.php');
         }
-    }  
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +43,6 @@
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 <style>
      body{
     background: url(../images/fond.jpg);
@@ -69,6 +76,8 @@
 
     label{
         font-weight: bolder;
+       padding-left: 30px;
+       padding-top: 10px;
     }
     .row {
         margin-top: 10px;
@@ -77,7 +86,9 @@
         margin-bottom: 15px;
         
     }
-
+   #centerbtn {
+    margin-top : 15px;
+   }
     </style>
  <link href="navbar-top.css" rel="stylesheet">
     
@@ -96,7 +107,7 @@
     
 <div class="container">
 <br>
-     <center><h1 >Confirmer un Rendez vous</h1></center> 
+     <center><h1 >Confirmer un Rendez-vous</h1></center> 
     <br> 
     
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
@@ -105,18 +116,12 @@
             <div class="row">
             <div class="col-md-4">
                     <span class="error"><?php echo $erreur;?></span>
-                    <label>Choix Categorie:</label>
+                    <label>Numéro de candidat</label>
                 </div>
                 
                 <div class="col-md-8">
-                    <select name="id_cand" class="form-control">
-                        <?php
-                            foreach ($retr_candidat as $chaque_elements) 
-                            {
-                                echo('<option value =" ' .$chaque_elements['id_candidat'] . ' ">' .$chaque_elements['email_candidat'] . '</option>');
-                            }
-                        ?>
-                    </select>
+                <input type="text" name="id" value ="<?php echo $retr_candidat['id_candidat'] ?>" class="form-control"/>
+                            
                 </div>
             </div>
            
@@ -140,7 +145,8 @@
              </div>            
 
         </div>
-            <center>
+
+            <center id="centerbtn">
                 <button type="submit" class="btn btn-success">Ajouter</button>
             </center>
       

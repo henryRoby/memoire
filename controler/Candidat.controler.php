@@ -9,6 +9,11 @@
             return $parc -> listerTousLesCandidat();
         }
 
+        public function Getuniquecandidat($id){
+            $candidat = new Candidats();
+            return   $candidat -> Getidcandidat($id);
+        }
+
         // insert
         public function postuleCandidat($email, $cv, $lm)
         {
