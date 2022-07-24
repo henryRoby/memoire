@@ -12,7 +12,7 @@
         { 
           $longcv = strlen($_FILES["cv"]["name"]);
           $longlm = strlen($_FILES["lettre"]["name"]);
-          if($longcv >= 10 OR $longlm >= 10)
+          if($longcv >= 20 OR $longlm >= 20)
           {
             $erreur = "nom de fichier tres long";
           }
