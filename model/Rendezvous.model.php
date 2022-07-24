@@ -83,15 +83,15 @@ require_once("connexion.php");
 
         public function listerTousLesRdv()
         { 
-            return $this -> connex -> query("SELECT * FROM rendezvous");    
+            return $this -> connex -> query("SELECT * FROM rendezvous INNER JOIN candidats ON rendezvous.id_candidat = candidats.id_candidat");    
         }
 
     }
 
-    // $test_ajout = new Rendezvous();
-    // $variable = $test_ajout -> listerTousLesRdv();
+    //  $test_ajout = new Rendezvous();
+    // var_dump($variable = $test_ajout -> listerTousLesRdv());
     // foreach ($variable as $key => $value) {
-    //     echo($value["id_candidat"]."<br>");
+    //     echo($value["email_candidat"]."<br>");
     // } 
 
 

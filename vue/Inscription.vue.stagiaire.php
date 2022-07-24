@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           }
           else
           {
-            $chemin = "../images".basename($photo);
+            $chemin = "../public/photo/".basename($photo);
             move_uploaded_file($_FILES["photo"]["tmp_name"],$chemin);
             $registre_des_stagiaire = new StaControler();
             $registre_des_stagiaire -> nouvauStagiaire($id_categorie, $num_rdv, $nom_stagiaire, $prenom_stagiaire,

@@ -237,7 +237,14 @@ h1 {
                   
                 </li>
                 <li>
-                    <a href="Tache.vue.ajout.php"><i class="fa fa-fw fa-user-plus"></i>  Ajout de nouveau tâche</a>
+                    <a href="Tache.vue.ajout.php"><i class=""></i>  Ajout de nouveau tâche</a>
+                </li>
+                <li>
+                    <a href="Stagiaire.list.vue.php"><i class=""></i>  Liste stagiaires</a>
+                </li>
+
+                <li>
+                    <a href="Liste_rdv.vue.php"><i class=""></i>  Liste rendez-vous</a>
                 </li>
     
             </ul>

@@ -9,12 +9,6 @@
     $aff_propre_tache = $tache_stg_con -> listeTachesParCategorie($connecte['id_categorie']);
 
 
-
-    //var_dump($aff_propre_tache);
-    // foreach ($aff_propre_tache as $key => $value) {
-    //     echo("io oh " . $value['description_tache'] . "<br>");
-    // }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
