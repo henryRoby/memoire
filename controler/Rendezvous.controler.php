@@ -13,6 +13,7 @@
             $rdv -> ajoutRendezvous();
             
         }
+        
         public function listeChaqueRdv()
         {
             $rdv = new Rendezvous();
@@ -20,6 +21,12 @@
         }
     }
     // $liste = new RdvControler();
-    // $liste -> ConfirmationRdv(1,"22/7/22","08:45");
+    // $variable = $liste -> listeChaqueRdv();
+
+    // foreach ($variable as $key => $value) {
+    //     echo($value["date_rdv"]);
+    // }
+
+    
 
 ?>
