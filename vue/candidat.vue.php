@@ -12,7 +12,7 @@
         { 
           $longcv = strlen($_FILES["cv"]["name"]);
           $longlm = strlen($_FILES["lettre"]["name"]);
-          if($longcv >= 10 OR $longlm >= 10)
+          if($longcv >= 20 OR $longlm >= 20)
           {
             $erreur = "nom de fichier tres long";
           }
@@ -46,7 +46,7 @@
               $chemin_lm = "../public/src/lm/".basename($_FILES["lettre"]["name"]);
               move_uploaded_file($_FILES["lettre"]["tmp_name"],$chemin_lm);
               $post_candidat -> postuleCandidat($_POST["email"], $_FILES["cv"]["name"], $_FILES["lettre"]["name"]);
-              header("Location:../pages/accueil.php ");
+              header("Location:accueil.php ");
             }
           }
         }
