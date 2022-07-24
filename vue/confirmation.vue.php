@@ -72,7 +72,7 @@
   
   <center>
     <h3>Votre demande est en cours !!!! </h3></br></br>
-   <a href="../pages/accueil.php" class="btn btn-primary">Vers la page d'accueil</a></center>
+   <a href="http://localhost/memoire/vue/accueil.php" class="btn btn-primary">Vers la page d'accueil</a></center>
   </div>
 
  
