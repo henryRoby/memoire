@@ -82,11 +82,25 @@ require_once("connexion.php");
             return $this -> connex -> query("SELECT * FROM candidats");    
         }
 
+          //suppression candidat
+    public function supprimerCandidat($id_candidat)
+    {
+        $suppr = "DELETE FROM candidats WHERE id_candidat = ?";
+        $prep = $this -> connex -> prepare($suppr);
+        $prep -> execute(array($id_candidat));
+        
     }
-    // $test_ajout = new Candidats();
+
+    }
+    
+        //$test_ajout = new Candidats();
+        //$test_ajout->supprimerCandidat(1);
+
     // $test_ajout -> setEmail_candidat("test@gmail.com");
     // $test_ajout -> setCv_candidat("cv.pdf");
     // $test_ajout -> setLm_candidat("lm.pdf");
     // $test_ajout -> ajoutCandidat();
+
+  
     
 ?>
