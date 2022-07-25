@@ -128,11 +128,11 @@ require_once("connexion.php");
         //liste tache par categorie
         public function listeTacheCategorie($id_categorie)
         {
-            $tache_selecte_cat="SELECT * FROM taches INNER JOIN categories ON taches.id_categorie = categories.id_categorie WHERE taches.id_categorie = ?";
+            $tache_selecte_cat = "SELECT * FROM taches INNER JOIN categories ON taches.id_categorie = categories.id_categorie WHERE taches.id_categorie = ?";
             $tache_par_categorie = $this -> connex -> prepare($tache_selecte_cat);
             $tache_par_categorie -> execute(array($id_categorie));
-            $des_taches_specifique = $tache_par_categorie -> fetch(PDO::FETCH_ASSOC);
-            return $des_taches_specifique;
+            //$des_taches_specifique = $tache_par_categorie -> fetch(PDO::FETCH_ASSOC);
+            return $tache_par_categorie;
         }
 
 

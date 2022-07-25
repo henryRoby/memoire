@@ -55,5 +55,9 @@
     
     }
     // $test = new TacheControler();
-    // var_dump($test -> tacheAModifier(2));
+    // $tacheCateg = $test -> listeTachesParCategorie(1);
+    // foreach ($tacheCateg as $key => $value) {
+    //     echo($value['id_categorie']);
+    // }
+
 ?>
