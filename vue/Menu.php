@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,8 +27,18 @@
         </li>
       </ul>
       <form class="d-flex">
-        <!-- <a class="btn btn-outline-success" type="submit" href="inscriptionstagiaire.php">s'inscrire</a>&nbsp; -->
-        <a class="btn btn-outline-success" type="submit" href="Connexion.vue.stagiaire.php">connexion</a>
+        <?php
+          if($_SESSION != null)
+          {?>
+            <a class="btn btn-outline-success" type="submit" href="Tache.unique.categ.php">connexion</a>
+          <?php
+          }
+          else
+          {?>
+            <a class="btn btn-outline-success" type="submit" href="Connexion.vue.stagiaire.php">connexion</a>
+          <?php
+          }
+        ?>        
       </form>
    
     </div>

@@ -141,7 +141,7 @@ body {
         <table class="tablecontent">
             <thead>
             <tr>
-                <th id="thead">Id candidat</th>
+                <th id="thead">Candidat</th>
                 <th id="thead">Date rendez-vous</th>
                 <th id="thead">Heure</th>
                 
@@ -155,7 +155,7 @@ body {
             {
             echo('
             <tr>
-                <td id="contenu">'. $chaque_elements["id_candidat"].'</td>
+                <td id="contenu">'. $chaque_elements["email_candidat"].'</td>
                 <td id="contenu">'.$chaque_elements["date_rdv"].'</td>
                 <td id="contenu">'.$chaque_elements["heure_rdv"] . '</td>
             </tr>');

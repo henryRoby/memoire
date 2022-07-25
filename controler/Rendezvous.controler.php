@@ -21,10 +21,10 @@
         }
     }
     // $liste = new RdvControler();
-    // $variable = $liste -> listeChaqueRdv();
+    // var_dump($variable = $liste -> listeChaqueRdv());
 
     // foreach ($variable as $key => $value) {
-    //     echo($value["date_rdv"]);
+    //     echo($value["id_candidat"]);
     // }
 
     
