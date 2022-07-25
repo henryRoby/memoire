@@ -64,20 +64,21 @@ h1 {
 }
   #contenu {
     text-align : center !important;
-    padding-bottom: 10px;
+    
     color: white;
+   
   }
 #h1tache {
     color: white;
     margin-top : 80px;
 }
-body {
-   overflow-x: hidden; 
+tbody {
+    white-space:normal;
+    width : 32px !important;
 }
     </style>
 
 </head>
-
     <div>
         <div class="container-fluid">
        
