@@ -16,9 +16,11 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <style>
-     @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
-
+#h2adimin {
+    font-size : 50px;
+    margin-top : 50px;
+}
 #wrapper {
     padding-left: 0;    
 }
@@ -151,16 +153,24 @@
     body {
    overflow-x: hidden; 
 }
+#menutache{
+    position :fixed;
+}
+#navvert {
+    font-size :15px;
+    font-weight: bolder;
+}
 </style>
 
 <body>
     
 <div id="noty-holder"></div>
 <div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
+   
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"  id="menutache"> 
+        
         <div class="navbar-header">
+            <img src="" alt="">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -176,16 +186,16 @@
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
                      
-                    <li><a href="#"><i class="fa fa-fw fa-power-off" ></i> Déconnecter</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-power-off" ></i>Déconnecter</a></li>
                 </ul>
             </li>
         </ul>
     
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav side-nav">
+        <div class="collapse navbar-collapse navbar-collapse">
+            <ul class="nav navbar-nav side-nav" id="navvert">
                 <li>
-                    <a href="Tache.unique.categ.php" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> Menu1<i></i></a>
+                    <a href="Tache.unique.categ.php" data-toggle="collapse" data-target="#submenu-1"><i class=""></i> LISTES DES TACHES<i></i></a>
                 </li>
                 <li>
                     <a href="#" data-toggle="collapse" data-target="#submenu-2"><i class=""></i>Menu2<i ></i></a>
@@ -197,12 +207,12 @@
     
             </ul>
         </div>
-        <!-- /.navbar-collapse -->
+        
     </nav>
  </div>
-</div></<br></br>
+</div><br></br>
 <center>
-    <h2 id="h2adimin">Bienvenue sur dashboard stagiaire</h2>
+    <h1 id="h2adimin">Bienvenue sur dashboard stagiaire</h1>
 </center>
    
 </body>

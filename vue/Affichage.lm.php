@@ -1,7 +1,7 @@
 <?php
     $lm_candidat = $_REQUEST['lm_candidat'];
 
-     echo '<iframe id ="iframe"src="../public/src/lm'.$lm_candidat.'" width="100%" style="height:100%"></iframe>';
+     echo '<iframe id ="iframe"src="../public/src/lm/'.$lm_candidat.'" width="100%" style="height:100%"></iframe>';
 ?>
 
 <!DOCTYPE html>
