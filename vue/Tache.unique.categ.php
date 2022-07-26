@@ -25,27 +25,54 @@
   </script>
     <style>
        
-#rowval {
-    margin-left: 10px;
+    #h4catego {
+        background: url(../images/fond.jpg);
+        background-size: cover;
+        text-align: center;
+       padding-top :50px;
+       color: white;
+        height : 150px;
+        font-size: 30px;
+    }
+#hj4{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.ptache {
+    font-size : 15px !important;
+}
+#rowval{
+    margin-top: 40px;
+}
+.h3tacheo {
+    font-weight: bolder;    
+    font-size : 20px;
+    text-decoration : underline;
 }
     </style>
 </head>
 <body>
 
-<div class="container">
-<div class="row">
+<div class="container"></br></br>
+    <h3 class="h3tacheo">Listes des tâches à faire :</h3>
+<div class="row" id="rowval">
     <?php
         foreach ($aff_propre_tache as $key => $value) 
         {?>
            
-              
+
                     <div class="col-md-4">
-                        <div class="card" style="width:320px"  id="rowval">
-                            <img class="card-img-top" src="../images/fond.jpg" alt="Card image" style="width:100%">
+                        <div class="card" style="width:320px"  >
+                            
+                            <h4 class="card-img-top" id="h4catego" ><?php echo($value['titre_tache']);?></h4>
                         <div class="card-body">
-                            <h4 class="card-title"><?php echo($value['titre_tache']);?></h4>
-                            <p class="card-text"><?php echo($value['description_tache']);?></p>
-                            <a href="#" class="btn btn-primary stretched-link"><?php echo($value['dure_tache']);?></a>
+                            <h4 class="card-title" id="hj4">Déscription :</h4>
+                            <p class="card-text ptache"><?php echo($value['description_tache']);?></p>
+
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title" id="hj4">Durée du tâche :</h4>
+                            <p class="ptache"><?php echo($value['dure_tache']);?></p>
                         </div>
                     </div>
                         </div>

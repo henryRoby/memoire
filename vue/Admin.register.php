@@ -14,13 +14,7 @@
             header("location: Dashboard.admin.php");
         }
         else
-        {?>
-
-        
-            <!-- <script>
-                alert("Vous n'êtes pas administrateur du site") 
-            </script> -->
-        <?php   
+        {  
         header("location: Admin.register.php");
         }
 
@@ -66,11 +60,7 @@ body {
 </style>
 </head>
 <body>
-    <!-- <form action="<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-        <input type="text" name="Admin" placeholder="Nom user">
-        <input type="password" name="Mdp_Admin" placeholder="mot de passe">
-        <input type="submit" placeholder="Envoyez">
-    </form> -->
+   
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

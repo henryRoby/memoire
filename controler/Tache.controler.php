@@ -54,10 +54,5 @@
         }
     
     }
-    // $test = new TacheControler();
-    // $tacheCateg = $test -> listeTachesParCategorie(1);
-    // foreach ($tacheCateg as $key => $value) {
-    //     echo($value['id_categorie']);
-    // }
 
 ?>

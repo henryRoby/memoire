@@ -2,8 +2,6 @@
 require_once("connexion.php");
     class Rendezvous
     {
-        private $email_candidat;
-
         private $num_rdv;
         private $id_candidat;
         private $date_rdv;
@@ -88,16 +86,6 @@ require_once("connexion.php");
 
     }
 
-    //  $test_ajout = new Rendezvous();
-    // var_dump($variable = $test_ajout -> listerTousLesRdv());
-    // foreach ($variable as $key => $value) {
-    //     echo($value["email_candidat"]."<br>");
-    // } 
-
-
-    // $test_ajout -> setId_stagiaire(1);
-    // $test_ajout -> setDate_rdv(Date('y,m,d'));
-    // $test_ajout -> setHeure_rdv(Date('h,i,sa'));
-    // $test_ajout -> ajoutRendezvous();
+  
     
 ?>

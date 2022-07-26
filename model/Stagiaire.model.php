@@ -154,12 +154,5 @@
         }
     }
 
-    // $test = new Stagiaires();
-    // var_dump($test -> getStgrConnecter(1));
-    // $test -> setNom_stgiaire("test");
-    // $test -> setPrenom_stagiaire("test");
-    // $test -> setEmail_stagiaire("test@gmail.com");
-    // $test -> setMdp_stagiaire("1234");
-    // $test -> setPhoto("test.jpg");
-    // $test -> nouveauStagiaire()
+    
 ?>
