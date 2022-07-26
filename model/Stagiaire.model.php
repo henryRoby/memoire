@@ -153,6 +153,4 @@
             return $stgr_connecte -> fetch(PDO::FETCH_ASSOC);
         }
     }
-
-    
 ?>

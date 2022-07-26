@@ -31,8 +31,6 @@
             $retr_candidat = new Candidats();
             $retr_candidat -> supprimerCandidat($id_candidat);
         }
-
-     
     }
 
 ?>
