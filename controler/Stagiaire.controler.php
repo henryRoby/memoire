@@ -32,5 +32,4 @@
             return $get_cli -> getStgrConnecter($id_stag);
         }
     }
-
 ?>

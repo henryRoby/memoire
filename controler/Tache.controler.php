@@ -52,7 +52,5 @@
                 $mise_a_jour -> setDure_tache($dure_tache);
                 $mise_a_jour -> modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache);
         }
-    
     }
-
 ?>
