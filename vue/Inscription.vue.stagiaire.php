@@ -239,6 +239,11 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
            text-align: right;
            margin-top: -30px;
           }
+          label {
+            font-weight: bolder;
+            text-decoration: underline;
+          }
+        
     </style>
  <link href="navbar-top.css" rel="stylesheet">
     
@@ -270,7 +275,7 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
 
      
         <div class="form-group col-6">
-            <label>Choix Categorie :</label>
+            <label>Choix Catégorie :</label>
             <select name="id_categorie" id="">
             <?php
                 foreach ($retr_categorie as $chaque_elements) 
@@ -281,7 +286,7 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
             </select>
         </div>
         <div class="form-group col-6">
-            <label>votre numero au moment du rendez vous :</label>
+            <label>votre numéro au moment du rendez-vous:</label>
             <select name="num_rdv" id="">
             <?php
                 foreach ($retr_rdv as $chaque_elements) 
@@ -295,25 +300,25 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
       <div class="form-group col-6"> 
 
             <label>Nom</label>
-            <input type="text" name="nom_stagiaire" class="form-control"  >     
+            <input type="text" name="nom_stagiaire" class="form-control"  required>     
          </div>
          <div class="form-group col-6">
-              <label>Prenom</label>
-            <input type="text" name="prenom_stagiaire" class="form-control" >   
+              <label>Prénom</label>
+            <input type="text" name="prenom_stagiaire" class="form-control" required>   
          </div>
          <div class="form-group col-6">
               <label>E-mail</label>
-            <input type="email" name="email_stagiaire" class="form-control">   
+            <input type="email" name="email_stagiaire" class="form-control" required>   
          </div>
          <div class="form-group col-6">
-            <label>Niveau de l'etudiant</label>
+            <label>Niveau de l'étudiant</label>
             <br/>
-            <div style="border: 2px solid black">
-            <input type="radio" name="niveau_stagiaire" value="L1">Licence 1
-            <input type="radio" name="niveau_stagiaire" value="L2">Licence 2
-            <input type="radio" name="niveau_stagiaire" value="L3">Licence 3<br/>
-            <input type="radio" name="niveau_stagiaire" value="M1">Master 1
-            <input type="radio" name="niveau_stagiaire" value="M2">Master 2  
+            <div>
+                <input type="radio" name="niveau_stagiaire" value="L1">Licence 1
+                <input type="radio" name="niveau_stagiaire" value="L2">Licence 2
+                <input type="radio" name="niveau_stagiaire" value="L3">Licence 3<br/>
+                <input type="radio" name="niveau_stagiaire" value="M1">Master 1
+                <input type="radio" name="niveau_stagiaire" value="M2">Master 2  
             </div>
           </div>
       </div>
@@ -321,40 +326,39 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
         
           <div class="form-group col-6">
                 <label>Debut du stage</label>
-              <input type="date" name="debut_stage" class="form-control">   
+              <input type="date" name="debut_stage" class="form-control" required>   
           </div>
           <div class="form-group col-6">
                 <label>Fin du stage</label>
-              <input type="date" name="fin_stage" class="form-control">   
+              <input type="date" name="fin_stage" class="form-control" required>   
           </div>
       </div>
     
      <div class="row">
       <div class="form-group col-6">
               <label>Mot de passe</label>
-            <input type="password" name="mdp_stagiaire" class="form-control" id="password">   
+            <input type="password" name="mdp_stagiaire" class="form-control" id="password" required>   
          </div>
      <div class="form-group col-6">
              <label>Photo de profil</label>
-            <input type="file" name="photo">   
+            <input type="file" name="photo" required>   
          </div>
          </div>
-     
     <br>     
     <div class="row">
     <div class="form-group col-6">
         <input type="submit" class="btn btn-success" name="submit" value="S'inscrire">
-    </div>    
+    </div>  
+    <div class="form-group col-6">
+    <a href="accueil.php">Page d'accueil</a> 
+    </div> 
+     
     </div>    
      </form> 
   </div>      
   
   </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
-
 
   </body>
 </html>

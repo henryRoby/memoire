@@ -169,8 +169,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         <center>
              <input type="submit" class="btn btn-success" name="submit" value="Se connecter">
         </center>   
-    </div> 
-    
+    </div></br>
+      <a href="inscription.vue.stagiaire.php">Inscrivez-vous</a></br>
+      <a href="accueil.php">Page d'accueil</a>
     <span>
       <?php 
       echo $erreur;
