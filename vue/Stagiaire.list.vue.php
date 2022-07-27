@@ -92,13 +92,13 @@ body {
     <div>
         <div class="container-fluid">
        
-            <h1 id="h1tache">Listes des tâches pour un nouveau stagiaire</h1></br>
+            <h1 id="h1tache">Listes des nouveaux stagiaires</h1></br>
         </div>
        <div>
        </div>
         <div class="row">
             <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-10">
 
         <div class="panel-body">
         <table class="tablecontent">
@@ -139,7 +139,7 @@ body {
         </table>
         </div>
             
-            <div class="col-md-2">
+            <div class="col-md-0">
                 
             </div>
         </div>
