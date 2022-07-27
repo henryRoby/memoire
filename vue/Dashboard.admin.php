@@ -251,6 +251,5 @@ h1 {
 <center>
     <h2 id="h2adimin">Bienvenue sur l'administration</h2>
 </center>
-   
 </body>
 </html>
