@@ -1,5 +1,5 @@
 <?php 
-header("location:vue/accueil.php")
+header("location:vue/accueil.php");
 ?>
 
 

@@ -7,8 +7,12 @@
     $connecte = $stg_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]);
     $tache_stg_con = new TacheControler();
     $aff_propre_tache = $tache_stg_con -> listeTachesParCategorie($connecte['id_categorie']);
-
-
+if(date("d/m/Y") == $connecte['fin_stage'])
+{
+    echo("Votre stage prend fin aujord'hui");
+}
+else
+{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +24,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js">
-   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js">  
   </script>
-    <style>
-       
+    <style>   
     #h4catego {
         background: url(../images/fond.jpg);
         background-size: cover;
@@ -57,7 +59,6 @@
     <h3 class="h3tacheo">Listes des tâches à faire :</h3>
 <div class="row" id="rowval">
     <?php
-    
         foreach ($aff_propre_tache as $key => $value)
          
         {
@@ -79,11 +80,9 @@
                             <p class="ptache"><?php echo($value['dure_tache']);?></p>
                         </div>
                     </div>
-                        </div>
-                    
-              </br></br>
-           
+                </div>   
         <?php
+        
         }
         }
     ?>
@@ -92,3 +91,6 @@
 </div>
 </body>
 </html>
+<?php
+}
+?>
