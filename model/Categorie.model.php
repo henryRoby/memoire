@@ -61,8 +61,5 @@ require_once("connexion.php");
         }
 
     }
-    // $test_ajout = new Categories();
-    // $test_ajout -> setTypes('dev');
-    // $test_ajout -> ajouterCategorieProd();
     
 ?>

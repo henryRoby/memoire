@@ -16,7 +16,7 @@
         {
             $nouv_ajout_tache = new TacheControler();
             
-            $nouv_ajout_tache->nouvelleTache($_POST["id_cat"], $_POST["titre"], $_POST["description"], $_POST["dure"]);
+            $nouv_ajout_tache->nouvelleTache($_POST["id_cat"], $_POST["titre"], $_POST["description"], $_POST["dure"],$_POST["niv_stag"],True);
         }
     }  
 ?>
@@ -133,6 +133,18 @@ label {
             </div>
             <div class="col-md-8">
             <textarea name="description" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="row" id="desc">
+            <div class="col-md-4">
+            <label >Niveau d'etudiant : </label>
+            </div>
+            <div class="col-md-8">
+            <input type="radio" name="niv_stag" value="L1">Licence 1
+            <input type="radio" name="niv_stag" value="L2">Licence 2
+            <input type="radio" name="niv_stag" value="L3">Licence 3<br/>
+            <input type="radio" name="niv_stag" value="M1">Master 1
+            <input type="radio" name="niv_stag" value="M2">Master 2
             </div>
         </div>
                             <center>

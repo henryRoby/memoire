@@ -31,19 +31,6 @@
             $retr_candidat = new Candidats();
             $retr_candidat -> supprimerCandidat($id_candidat);
         }
-
-        // public function PrendClientConnecter($email, $mdp)
-        // {
-        //     $client_con = new Clients();
-        //     return $client_con -> SelectClientLorsConnex($email, $mdp);
-        // }
-        // public function suisConnecter($num_cli)
-        // {
-        //     $get_cli = new Clients();
-        //     return $get_cli -> getClientConnecter($num_cli);
-        // }
     }
-    // $test = new CandControler();
-    // $test->SuppressionCandidat(8)
 
 ?>

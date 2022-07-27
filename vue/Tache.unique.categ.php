@@ -35,8 +35,12 @@
 <div class="container">
 <div class="row">
     <?php
-        foreach ($aff_propre_tache as $key => $value) 
-        {?>
+    
+        foreach ($aff_propre_tache as $key => $value)
+         
+        {
+            if($connecte["niveau_stagiaire"] == $value["niv_stag"]){ 
+            ?>
            
               
                     <div class="col-md-4">
@@ -53,6 +57,7 @@
               </br></br>
            
         <?php
+        }
         }
     ?>
 

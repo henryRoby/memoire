@@ -109,5 +109,3 @@ h1 {
     $liste -> affichageCandidat();
 ?>
 </body>
-
-

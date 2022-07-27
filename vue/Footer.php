@@ -52,6 +52,13 @@
       <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
         ><i class="fab fa-github"></i
       ></a>
+
+
+
+      <!-- register -->
+      <a class="btn btn-outline-light btn-floating m-1" href="Admin.register.php" role="button"
+        ><i class="fa fa-sign-in">ADMIN</i>
+</a>
     </section>
     <!-- Section: Social media -->
   </div>

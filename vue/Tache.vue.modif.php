@@ -9,6 +9,8 @@
     $titre_tache = null;
     $description_tache = null;
     $dure_tache = null;
+    $niv_stag = null;
+    $visibilite = null;
     $instance_categorie = new CatControler();
     $retour_categorie = $instance_categorie -> listeChaqueCategorie();
     $modif_tache = new TacheControler();
@@ -23,6 +25,8 @@
         $titre_tache = $select['titre_tache'];
         $description_tache = $select['description_tache'];
         $dure_tache = $select['dure_tache'];
+        $niv_stag = $select['niv_stag'];
+        $visibilite = $select['visibilite'];
 
         $num_tache = $_REQUEST['num_tache'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") 
@@ -36,7 +40,7 @@
             else
             {                
                 $modif_tache -> miseAjourTache($_POST["id_categorie"], $_POST["titre_tache"], $_POST["description_tache"],
-                $_POST["dure_tache"], $_GET['num_tache']);
+                $_POST["dure_tache"], $_POST["niv_stag"],true, $_GET['num_tache']);
                 header('Location:Tache.vue.afficher.php');
             }
         }  
@@ -143,6 +147,11 @@ label {
             </div>
             <div class="col-md-8">
                 <input type="text" name="dure_tache" value="<?php echo !empty($dure_tache)?$dure_tache:'';?>" class="form-control"/>
+            </div>
+        </div></br></br>
+        <div class="row">
+            <div class="col-md-8">
+                <input type="hidden" name="niv_stag" value="<?php echo !empty($niv_stag)?$niv_stag:'';?>" class="form-control"/>
             </div>
         </div></br></br>
         <center>

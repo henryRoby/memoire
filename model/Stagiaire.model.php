@@ -8,6 +8,9 @@
         private $nom_stgiaire;
         private $prenom_stagiaire;
         private $email_stagiaire;
+        private $niveau_stagiaire;
+        private $debut_stage;
+        private $fin_stage;
         private $mdp_stagiaire;
         private $photo;
         private $connex;
@@ -20,6 +23,9 @@
             $this -> nom_stgiaire = "";
             $this -> prenom_stagiaire = "";
             $this -> email_stagiaire = "";
+            $this -> niveau_stagiaire = "";
+            $this -> debut_stage = "";
+            $this -> fin_stage = "";
             $this -> mdp_stagiaire = "";
             $this -> photo = "";
             $this -> connex = ConnexionDB::getConnexionDB();
@@ -49,6 +55,18 @@
         public function setEmail_stagiaire($email_stagiaire)
         {
             $this -> email_stagiaire = $email_stagiaire; 
+        }
+        public function setNiveau_stagiaire($niveau_stagiaire)
+        {
+            $this -> niveau_stagiaire = $niveau_stagiaire; 
+        }
+        public function setDebut_stage($debut_stage)
+        {
+            $this -> debut_stage = $debut_stage; 
+        }
+        public function setFin_stage($fin_stage)
+        {
+            $this -> fin_stage = $fin_stage; 
         }
         public function setMdp_stagiaire($mdp_stagiaire)
         {
@@ -90,6 +108,18 @@
         {
              return $this -> email_stagiaire; 
         }
+        public function getNiveau_stagiaire()
+        {
+             return $this -> niveau_stagiaire; 
+        }
+        public function getDebut_stage()
+        {
+             return $this -> debut_stage; 
+        }
+        public function getFin_stage()
+        {
+             return $this -> fin_stage; 
+        }
         public function getMdp_stagiaire()
         {
              return $this -> mdp_stagiaire; 
@@ -114,6 +144,9 @@
                      :nom_stgiaire,
                      :prenom_stagiaire,
                      :email_stagiaire,
+                     :niveau_stagiaire,
+                     :debut_stage,
+                     :fin_stage,
                      :mdp_stagiaire,  
                      :photo
                  )"
@@ -124,6 +157,9 @@
                 "nom_stgiaire" => $this -> getNom_stgiaire(),
                 "prenom_stagiaire" => $this -> getPrenom_stagiaire(),
                 "email_stagiaire" => $this -> getEmail_stagiaire(),
+                "niveau_stagiaire" => $this -> getNiveau_stagiaire(),
+                "debut_stage" => $this -> getDebut_stage(),
+                "fin_stage" => $this -> getFin_stage(),
                 "mdp_stagiaire" => $this -> getMdp_stagiaire(),
                 "photo" => $this -> getPhoto(),
             ));
@@ -153,13 +189,4 @@
             return $stgr_connecte -> fetch(PDO::FETCH_ASSOC);
         }
     }
-
-    // $test = new Stagiaires();
-    // var_dump($test -> getStgrConnecter(1));
-    // $test -> setNom_stgiaire("test");
-    // $test -> setPrenom_stagiaire("test");
-    // $test -> setEmail_stagiaire("test@gmail.com");
-    // $test -> setMdp_stagiaire("1234");
-    // $test -> setPhoto("test.jpg");
-    // $test -> nouveauStagiaire()
 ?>

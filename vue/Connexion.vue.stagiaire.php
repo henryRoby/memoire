@@ -4,7 +4,7 @@ include("../controler/Stagiaire.controler.php");
 $check_connexion = new StaControler();
 $stock_email = array();
 $stock_pswd = array();
-//$id_prod = $_POST["id_produit"];
+
 
 $erreur = "";
 

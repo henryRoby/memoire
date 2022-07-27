@@ -101,16 +101,5 @@ require_once("connexion.php");
     }
     
 
-    }
-    
-        //$test_ajout = new Candidats();
-       //var_dump( $test_ajout->Getidcandidat(3));
-
-    // $test_ajout -> setEmail_candidat("test@gmail.com");
-    // $test_ajout -> setCv_candidat("cv.pdf");
-    // $test_ajout -> setLm_candidat("lm.pdf");
-    // $test_ajout -> ajoutCandidat();
-
-  
-    
+    }   
 ?>

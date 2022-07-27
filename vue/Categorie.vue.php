@@ -1,5 +1,6 @@
 <?php
     require_once("../controler/Categorie.controler.php");
+    require_once ("dashboard.admin.php");
     $type_err = ""; 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
