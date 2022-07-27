@@ -84,6 +84,7 @@ body {
 #reduire_img{
     height: 20%;
     width: 20%;
+    border-radius:10px;
 }
     </style>
 
@@ -139,7 +140,7 @@ body {
         </table>
         </div>
             
-            <div class="col-md-0">
+            <div class="col-md-2">
                 
             </div>
         </div>

@@ -152,6 +152,7 @@
 }
     #imagestagiaire {
         width : 40px;
+        border-radius:50%;
     }
     body {
    overflow-x: hidden; 
@@ -163,9 +164,16 @@
     font-size :15px;
     font-weight: bolder;
 }
+#menuhorizon {
+    font-weight : bold;
+    font-size : 15px;
+}
+
 </style>
 
 <body>
+
+   
     
 <div id="noty-holder"></div>
 <div id="wrapper">
@@ -189,9 +197,9 @@
 
                 </b><?php echo('<img src="../public/photo/'. $unique_stagiaire["photo"].'" id="imagestagiaire" alt="'.$unique_stagiaire["photo"].'">')?>
             </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-fw fa-user"></i><?php echo($unique_stagiaire["prenom_stagiaire"]); ?></a></li>
-                    <li><a href="Stagiaire.deconnecte.php"><i class="fa fa-fw fa-power-off" ></i> Déconnecter</a></li>
+                <ul class="dropdown-menu" >
+                    <li><a href="#" onclick="click()"  id="menuhorizon" ><span class="glyphicon glyphicon-user"> <?php echo($unique_stagiaire["prenom_stagiaire"]); ?></a></li>
+                    <li><a href="Stagiaire.deconnecte.php" id="menuhorizon"> <span class="glyphicon glyphicon-off"> Déconnecter</a></li>
                 </ul>
             </li>
         </ul>
@@ -220,4 +228,8 @@
     <h1 id="h2adimin">Bienvenue sur dashboard stagiaire</h1>
 </center> 
 </body>
+
 </html>
+
+
+
