@@ -6,6 +6,9 @@ include("../controler/Rendezvous.controler.php");
 $test = new StaControler();
 $ap_categorie = new CatControler();
 $rendez_vous_num = new RdvControler();
+
+
+ 
 $retr_categorie = $ap_categorie -> listeChaqueCategorie();
 $retr_rdv = $rendez_vous_num -> listeChaqueRdv();
 $tab_em = array();
@@ -20,9 +23,31 @@ $tab_rdv = array();
     $fin_stage = "";
     $mdp_stagiaire = "";
     $photo = "";
-if($_SERVER["REQUEST_METHOD"] == "POST")
+if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
 {
-    $id_categorie = $_POST["id_categorie"];
+  $errors= array();
+  
+  $photo = $_FILES['photo']['name'];
+  $file_size =$_FILES['photo']['size'];
+  $file_tmp =$_FILES['photo']['tmp_name'];
+  $file_type=$_FILES['photo']['type'];
+  $teste_ext = explode('.',$_FILES['photo']['name']);
+  $file_ext=strtolower(end($teste_ext));
+  
+  $extensions= array("jpeg","jpg","png");
+  
+  if(in_array($file_ext,$extensions)=== false){
+     $errors[]="Entrez une éxtension 'png' ou 'jpg'";
+
+  }
+  
+  if($file_size > 2097152){
+     $errors[]='File size must be excately 2 MB';
+  }
+  
+  if(empty($errors)==true)
+  {
+     $id_categorie = $_POST["id_categorie"];
     $num_rdv = $_POST["num_rdv"];
     $nom_stagiaire = $_POST["nom_stagiaire"];
     $prenom_stagiaire = $_POST["prenom_stagiaire"];
@@ -31,7 +56,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $debut_stage = $_POST["debut_stage"];
     $fin_stage = $_POST["fin_stage"];
     $mdp_stagiaire = $_POST["mdp_stagiaire"];
-    $photo = $_FILES["photo"]["name"];
         $reg_length = $test -> parcourirStagiaire();
         foreach ($reg_length as $value)
         {
@@ -50,7 +74,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         if ($bool == true) 
         {
-            echo('Oups!! Quelq\'un utilise déjà votre email');
+
+          ?>
+          <style>
+            #disparu {
+              display: none;
+            }
+            #error{
+              color: white;
+            }
+            #erreurim {
+              margin-top : 300px;
+              background-color: #c0c0c0;
+              padding-top : 20px;
+              padding-bottom : 20px;
+              border-radius : 10px;
+            }
+          </style>
+          <center>
+            <div class="row">
+              <div class="col-md-4">
+                
+              </div>
+              <div class="col-md-4 border border" id="erreurim">
+                  <h3 id="error">
+                    <?php   echo("Oups!! Quelqu'un utilise déjà votre email"); ?>
+                  </h3>
+                    <a href="inscription.header.vue.php" class="btn btn-primary">Réessayer</a>
+                </div>
+                <div class="col-md-4">
+                
+                </div>
+            </div>
+        </center>
+      <?php
         }else
         {
           $manisa_rdv = 0;
@@ -65,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           }
           if ($bool == true) 
           {
-              echo('Oups!! un numero pour un candidat, vous êtes un escraud');
+            echo('Oups!! un numero pour un candidat, vous êtes un escraud');
           }
           else
           {
@@ -76,8 +133,52 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $email_stagiaire,$niveau_stagiaire,$debut_stage,$fin_stage, $mdp_stagiaire, $photo);
               header("location: Connexion.vue.stagiaire.php");
           }
+     
         }
-}
+      }
+  else
+  {
+    $er = "";
+    for ($i=0; $i < count($errors) ; $i++) { 
+     $er = $errors[$i];
+    }
+
+?>
+    <style>
+      #disparu {
+        display: none;
+      }
+      #error{
+        color: white;
+      }
+      #erreurim {
+        margin-top : 300px;
+        background-color: #c0c0c0;
+        padding-top : 20px;
+        padding-bottom : 20px;
+        border-radius : 10px;
+      }
+    </style>
+    <center>
+      <div class="row">
+        <div class="col-md-4">
+          
+        </div>
+        <div class="col-md-4 border border" id="erreurim">
+            <h3 id="error">
+              <?php echo($er); ?>
+            </h3>
+            <a href="inscription.header.vue.php" class="btn btn-primary">Réessayer</a>
+          </div>
+          <div class="col-md-4">
+          
+          </div>
+      </div>
+  </center>
+<?php
+  }
+
+        }
 ?>
 <!doctype html>
 <html lang="fr">
@@ -154,7 +255,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   <body>
     
     
-    <div class="container">
+    <div class="container" id="disparu">
     <br>
     <h1>Inscrivez-vous</h1>
     <br> 

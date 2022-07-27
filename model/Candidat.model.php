@@ -92,11 +92,11 @@ require_once("connexion.php");
         }
 
           //suppression candidat
-    public function supprimerCandidat($id_candidat)
-    {
-        $suppr = "DELETE FROM candidats WHERE id_candidat = ?";
-        $prep = $this -> connex -> prepare($suppr);
-        $prep -> execute(array($id_candidat));    
-    }
-}   
+        public function supprimerCandidat($id_candidat)
+        {
+            $suppr = "DELETE FROM candidats WHERE id_candidat = ?";
+            $prep = $this -> connex -> prepare($suppr);
+            $prep -> execute(array($id_candidat));
+        }
+    } 
 ?>

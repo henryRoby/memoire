@@ -56,7 +56,5 @@
                 $mise_a_jour -> setVisibilite($visibilite);
                 $mise_a_jour -> modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache);
         }
-    
     }
-
 ?>

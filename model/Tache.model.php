@@ -142,7 +142,7 @@ require_once("connexion.php");
             $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache));
             
         }
-        //liste tache par categorie
+        
         public function listeTacheCategorie($id_categorie)
         {
             $tache_selecte_cat = "SELECT * FROM taches INNER JOIN categories ON taches.id_categorie = categories.id_categorie WHERE taches.id_categorie = ?";
@@ -150,5 +150,5 @@ require_once("connexion.php");
             $tache_par_categorie -> execute(array($id_categorie));
             return $tache_par_categorie;
         }
-    }   
-?>
+    }
+   ?>
