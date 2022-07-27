@@ -20,7 +20,5 @@
             return $Categorie -> listerTousLesCategories();
         }
     }
-    // $liste = new CatControler();
-    // var_dump($liste -> listeChaqueCategorie());
 
 ?>

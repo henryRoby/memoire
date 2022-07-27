@@ -20,12 +20,6 @@
             return $rdv -> listerTousLesRdv();
         }
     }
-    // $liste = new RdvControler();
-    // var_dump($variable = $liste -> listeChaqueRdv());
-
-    // foreach ($variable as $key => $value) {
-    //     echo($value["id_candidat"]);
-    // }
 
     
 

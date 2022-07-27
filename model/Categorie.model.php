@@ -59,7 +59,5 @@ require_once("connexion.php");
         { 
             return $this -> connex -> query("SELECT * FROM categories");    
         }
-
-    }
-    
+    }    
 ?>
