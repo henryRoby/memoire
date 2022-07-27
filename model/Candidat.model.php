@@ -99,7 +99,5 @@ require_once("connexion.php");
         $prep -> execute(array($id_candidat));
         
     }
-    
-
     }   
 ?>

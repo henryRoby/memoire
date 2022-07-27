@@ -150,8 +150,5 @@ require_once("connexion.php");
             $tache_par_categorie -> execute(array($id_categorie));
             return $tache_par_categorie;
         }
-
-
-    }
-    
+    }   
 ?>

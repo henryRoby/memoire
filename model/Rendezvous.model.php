@@ -83,6 +83,5 @@ require_once("connexion.php");
         { 
             return $this -> connex -> query("SELECT * FROM rendezvous INNER JOIN candidats ON rendezvous.id_candidat = candidats.id_candidat");    
         }
-
     }    
 ?>
