@@ -1,6 +1,6 @@
 <?php
     $cv_env = $_REQUEST['cv_candidat'];
-    echo '<iframe src="../public/src/cv/'.$cv_env.'" width="100%" style="height:100%"></iframe>';
+    echo '<iframe src="../public/src/cv/'.$cv_env.'" width="100%" style="height:100%"></iframe>';  
 ?>
 
 <!DOCTYPE html>
