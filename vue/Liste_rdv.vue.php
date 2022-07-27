@@ -18,6 +18,26 @@
 <html lang="en">
 <head>
 
+<link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+   
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
 <style> 
 
 
@@ -113,7 +133,8 @@ h1 {
   #contenu {
     text-align : center !important;
     padding-bottom: 10px;
-    color: black;
+    color: white;
+    font-size : 20px;
   }
 #h1tache {
     color: white;
@@ -121,6 +142,9 @@ h1 {
 }
 body {
    overflow-x: hidden; 
+   background: url(../images/fond.jpg);
+    background-attachment: fixed;
+    background-size: cover;
 }
     </style>
 
@@ -177,6 +201,6 @@ body {
     }
     $liste = new RendezvousVue();
     $liste -> affichageRdv();
-?>
+?></br></br></br></br></br></br></br></br>
 
 <?php include('Footer.php')?>

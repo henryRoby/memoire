@@ -77,6 +77,9 @@ tbody {
     white-space:normal;
     width : 32px !important;
 }
+body{
+    overflow-x: hidden; 
+}
     </style>
 
 </head>
