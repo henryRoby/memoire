@@ -85,7 +85,7 @@ body {
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Se connecter">
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="../pages/accueil.php" class="text-info">Retournez vers la page d'acceil</a>
+                                <a href="accueil.php" class="text-info">Retournez vers la page d'acceil</a>
                             </div>
                         </form>
                     </div>
