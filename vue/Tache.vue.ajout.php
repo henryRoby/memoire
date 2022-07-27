@@ -82,7 +82,7 @@ label {
     
 <div class="container-fluid">
 <br>
-     <center><h1 id="idajouttache">Ajouter un nouveau tache</h1></center> 
+     <center><h1 id="idajouttache">Ajouter un nouveau tâche</h1></center> 
     <br> 
     
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">

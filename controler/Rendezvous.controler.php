@@ -19,5 +19,17 @@
             $rdv = new Rendezvous();
             return $rdv -> listerTousLesRdv();
         }
+
+         //suprimer une RDV
+
+         public function SuppressionRdv($num_rdv)
+         {
+             global $retr_rdv;
+             $retr_rdv = new Rendezvous();
+             $retr_rdv -> supprimerRdv($num_rdv);
+         }
     }
+
+    // $test = new Rendezvous();
+    // $test ->supprimerRdv(4);
 ?>

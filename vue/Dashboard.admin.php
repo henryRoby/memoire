@@ -232,14 +232,14 @@ h1 {
                     <a href="Tache.vue.ajout.php"><i class=""></i>  Ajout de nouveau tâche</a>
                 </li>
                 <li>
-                    <a href="Stagiaire.list.vue.php"><i class=""></i>  Liste stagiaires</a>
+                    <a href="Stagiaire.list.vue.php"><i class=""></i>  Listes des stagiaires</a>
                 </li>
                 <li>
-                    <a href="Categorie.vue.php"><i class=""></i>  Ajout categorie</a>
+                    <a href="Categorie.vue.php"><i class=""></i>  Ajout catégorie</a>
                 </li>
 
                 <li>
-                    <a href="Liste_rdv.vue.php"><i class=""></i>  Liste rendez-vous</a>
+                    <a href="liste.rdv.dashboard.vue.php"><i class=""></i>  Liste rendez-vous</a>
                 </li>
     
             </ul>
