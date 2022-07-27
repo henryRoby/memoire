@@ -1,7 +1,7 @@
 <?php
     include("../controler/Rendezvous.controler.php");
     include("../controler/Candidat.controler.php");
-
+    require_once("dashboard.admin.php");
     $erreur = "";
     $ap_candidat = new CandControler();
   
@@ -30,19 +30,10 @@
 <html lang="en">
 <head>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="hamza dbani">
-    <meta name="generator" content="Hugo 0.84.0">
+    
     <title>ajout nouveau RDV</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
-    <link rel="stylesheet" href="fichier.css">
     
-
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <style>
      body{
     background: url(../images/fond.jpg);
@@ -131,7 +122,7 @@
                 <label>Date du rendez vous</label>
              </div>   
              <div class="col-md-8">
-                <input type="date" name="date" class="form-control"/>
+                <input type="date" name="date" class="form-control" required/>
              </div>            
 
         </div>
@@ -141,7 +132,7 @@
              <label>Heure du rendez vous</label>
              </div>   
              <div class="col-md-8">
-             <input type="text" name="heure" class="form-control"/>
+             <input type="text" name="heure" class="form-control" required/>
              </div>            
 
         </div>

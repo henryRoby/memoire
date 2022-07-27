@@ -83,5 +83,17 @@ require_once("connexion.php");
         { 
             return $this -> connex -> query("SELECT * FROM rendezvous INNER JOIN candidats ON rendezvous.id_candidat = candidats.id_candidat");    
         }
-    }    
+
+        // supression rdv
+        public function supprimerRdv($num_rdv)
+        {
+            $suppr = "DELETE FROM rendezvous WHERE num_rdv = ?";
+            $prep = $this -> connex -> prepare($suppr);
+            $prep -> execute(array($num_rdv));
+            
+        }
+    }
+    
+    // $test = new Rendezvous();
+    // $test ->supprimerRdv(3);
 ?>

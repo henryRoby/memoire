@@ -10,8 +10,9 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <style>
-    .navbare{
-      position :;
+    #logo {
+      width: 250px;
+      height : auto;
     }
     </style>
     <body>
