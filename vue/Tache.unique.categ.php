@@ -2,7 +2,7 @@
 //session_start();
     include_once('Dashboard.propre_stagiaire.php');
     include("../controler/Tache.controler.php");
-    include("../controler/Stagiaire.controler.php");
+    include_once("../controler/Stagiaire.controler.php");
     $stg_connecter = new StaControler();
     $connecte = $stg_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]);
     $tache_stg_con = new TacheControler();
