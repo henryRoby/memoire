@@ -3,13 +3,15 @@
     class TacheControler extends Taches
     {
         public $retr_tache;
-        public function nouvelleTache($id_cat, $titre, $description, $dure)
+        public function nouvelleTache($id_cat, $titre, $description, $dure, $niv_stag, $visibilite)
         {
             $tache = new Taches();
             $tache -> setId_categorie($id_cat);
             $tache -> setTitre_tache($titre);
             $tache -> setDescription_tache($description);
             $tache -> setDure_tache($dure);
+            $tache -> setNiv_stag($niv_stag);
+            $tache -> setVisibilite($visibilite);
             $tache -> ajoutTaches();
 
         }
@@ -43,14 +45,16 @@
         }
 
         
-        public function miseAjourTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache)
+        public function miseAjourTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache)
         {
             $mise_a_jour = new Taches();
                 $mise_a_jour -> setId_categorie($id_categorie);
                 $mise_a_jour -> setTitre_tache($titre_tache);              
                 $mise_a_jour -> setDescription_tache($description_tache);
                 $mise_a_jour -> setDure_tache($dure_tache);
-                $mise_a_jour -> modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache);
+                $mise_a_jour -> setNiv_stag($niv_stag);
+                $mise_a_jour -> setVisibilite($visibilite);
+                $mise_a_jour -> modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache);
         }
     }
 ?>

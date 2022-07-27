@@ -18,6 +18,9 @@ $tab_rdv = array();
     $nom_stagiaire = "";
     $prenom_stagiaire = "";
     $email_stagiaire = "";
+    $niveau_stagiaire = "";
+    $debut_stage = "";
+    $fin_stage = "";
     $mdp_stagiaire = "";
     $photo = "";
 if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
@@ -49,6 +52,9 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
     $nom_stagiaire = $_POST["nom_stagiaire"];
     $prenom_stagiaire = $_POST["prenom_stagiaire"];
     $email_stagiaire = $_POST["email_stagiaire"];
+    $niveau_stagiaire = $_POST["niveau_stagiaire"];
+    $debut_stage = $_POST["debut_stage"];
+    $fin_stage = $_POST["fin_stage"];
     $mdp_stagiaire = $_POST["mdp_stagiaire"];
         $reg_length = $test -> parcourirStagiaire();
         foreach ($reg_length as $value)
@@ -124,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
             move_uploaded_file($_FILES["photo"]["tmp_name"],$chemin);
             $registre_des_stagiaire = new StaControler();
             $registre_des_stagiaire -> nouvauStagiaire($id_categorie, $num_rdv, $nom_stagiaire, $prenom_stagiaire,
-            $email_stagiaire, $mdp_stagiaire, $photo);
+            $email_stagiaire,$niveau_stagiaire,$debut_stage,$fin_stage, $mdp_stagiaire, $photo);
               header("location: Connexion.vue.stagiaire.php");
           }
      
@@ -299,6 +305,28 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
               <label>E-mail</label>
             <input type="email" name="email_stagiaire" class="form-control">   
          </div>
+         <div class="form-group col-6">
+            <label>Niveau de l'etudiant</label>
+            <br/>
+            <div style="border: 2px solid black">
+            <input type="radio" name="niveau_stagiaire" value="L1">Licence 1
+            <input type="radio" name="niveau_stagiaire" value="L2">Licence 2
+            <input type="radio" name="niveau_stagiaire" value="L3">Licence 3<br/>
+            <input type="radio" name="niveau_stagiaire" value="M1">Master 1
+            <input type="radio" name="niveau_stagiaire" value="M2">Master 2  
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        
+          <div class="form-group col-6">
+                <label>Debut du stage</label>
+              <input type="date" name="debut_stage" class="form-control">   
+          </div>
+          <div class="form-group col-6">
+                <label>Fin du stage</label>
+              <input type="date" name="fin_stage" class="form-control">   
+          </div>
       </div>
     
      <div class="row">

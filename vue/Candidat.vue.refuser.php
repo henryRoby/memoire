@@ -9,8 +9,6 @@
     {
         $id_candidat = $_REQUEST['id_candidat'];
         $instancesup = new CandControler();
-
-        //var_dump($id_candidat);
         $instancesup -> SuppressionCandidat($id_candidat);
         header('Location:Candidat.vue.affich.php');
     }

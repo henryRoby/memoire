@@ -58,6 +58,6 @@ require_once("connexion.php");
         public function listerTousLesCategories()
         { 
             return $this -> connex -> query("SELECT * FROM categories");    
-        }
+        }    
     } 
 ?>

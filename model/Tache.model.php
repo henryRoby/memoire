@@ -7,6 +7,8 @@ require_once("connexion.php");
         private $titre_tache;
         private $description_tache;
         private $dure_tache;
+        private $niv_stag;
+        private $visibilite;
         private $connex;
 
         public function __construct()
@@ -16,6 +18,8 @@ require_once("connexion.php");
             $this -> titre_tache = "";
             $this -> description_tache = "";
             $this -> dure_tache = "";
+            $this -> niv_stag = "";
+            $this -> visibilite = true;
             $this -> connex = ConnexionDB::getConnexionDB();
         }
 
@@ -40,6 +44,14 @@ require_once("connexion.php");
         public function setDure_tache($dure_tache)
         {
             $this -> dure_tache = $dure_tache;
+        }
+        public function setNiv_stag($niv_stag)
+        {
+            $this -> niv_stag = $niv_stag;
+        }
+        public function setVisibilite($visibilite)
+        {
+            $this -> visibilite = $visibilite;
         }
         public function setConnex($connex)
         {
@@ -68,6 +80,14 @@ require_once("connexion.php");
         {
             return $this -> dure_tache;
         }
+        public function getNiv_stag()
+        {
+            return $this -> niv_stag;
+        }
+        public function getVisibilite()
+        {
+            return $this -> visibilite;
+        }
         public function getConnex()
         {
             return $this -> connex;
@@ -77,12 +97,14 @@ require_once("connexion.php");
 
         public function ajoutTaches()
         {
-            $requete_ajout_tache= $this -> connex ->prepare("INSERT INTO taches VALUE(NULL, :id_categorie, :titre_tache, :description_tache, :dure_tache)");
+            $requete_ajout_tache= $this -> connex ->prepare("INSERT INTO taches VALUE(NULL, :id_categorie, :titre_tache, :description_tache, :dure_tache, :niv_stag, :visibilite)");
             $requete_ajout_tache -> execute(array(
                 "id_categorie" => $this -> getId_categorie(),
                 "titre_tache" => $this -> getTitre_tache(),
                 "description_tache" => $this -> getDescription_tache(),
-                "dure_tache" => $this -> getDure_tache()
+                "dure_tache" => $this -> getDure_tache(),
+                "niv_stag" => $this -> getNiv_stag(),
+                "visibilite" => $this -> getVisibilite()
 
             ));
         }
@@ -110,15 +132,14 @@ require_once("connexion.php");
             $retrMod = $this -> connex -> prepare($modif);
             $retrMod -> execute(array($num_tache));
             $donne_db = $retrMod -> fetch(PDO::FETCH_ASSOC);
-            
             return $donne_db;  
         }
-        public function modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache)
+        public function modifierTache($id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache)
         {
             $modif = "UPDATE taches SET id_categorie = ?, titre_tache = ?,
-            description_tache = ?, dure_tache = ? WHERE num_tache = ?";
+            description_tache = ?, dure_tache = ?, niv_stag = ?, visibilite =? WHERE num_tache = ?";
             $preparation_modif_tache = $this -> connex -> prepare($modif);
-            $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $num_tache));
+            $preparation_modif_tache -> execute(array( $id_categorie, $titre_tache, $description_tache, $dure_tache, $niv_stag, $visibilite, $num_tache));
             
         }
         
@@ -130,4 +151,4 @@ require_once("connexion.php");
             return $tache_par_categorie;
         }
     }
-?>
+   ?>

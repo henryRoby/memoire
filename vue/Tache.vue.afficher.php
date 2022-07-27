@@ -7,6 +7,7 @@
         public $titre_tache= "";
         public $description_tache = "";
         public $dure_tache ="";
+        public $niv_stag ="";
         public function affichageTaches()
         {
             $aff = new TacheControler();
@@ -97,6 +98,7 @@ tbody {
                 <th id="thead">Titre</th>
                 <th id="thead">Déscriptions</th>
                 <th id="thead">Durée</th>
+                <th id="thead">Niveau</th>
                 <th id="thead">Actions</th>
             </tr>
             </thead>
@@ -111,6 +113,7 @@ tbody {
                 <td id="contenu">'. $chaque_elements["titre_tache"].'</td>
                 <td id="contenu">'.$chaque_elements["description_tache"].'</td>
                 <td id="contenu">'.$chaque_elements["dure_tache"] . '</td>
+                <td id="contenu">'.$chaque_elements["niv_stag"] . '</td>
                 <td id="contenu"></br>
                     <a href="Tache.vue.modif.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-primary">Modifier</a>
                     <a href="Tache.vue.supr.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-danger">Supprimer</a>

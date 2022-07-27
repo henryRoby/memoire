@@ -182,11 +182,10 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">            
             <li class="dropdown">
-                <a href="Stagiaire.deconnecte.php" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-angle-down"></b><img src="../images/fond.jpg" id="imagestagiaire" alt=""></a>
+                <a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-angle-down"></b><img src="../images/fond.jpg" id="imagestagiaire" alt=""></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
-                     
-                    <li><a href="#"><i class="fa fa-fw fa-power-off" ></i>Déconnecter</a></li>
+                    <li><a href="Stagiaire.deconnecte.php"><i class="fa fa-fw fa-power-off" ></i> Déconnecter</a></li>
                 </ul>
             </li>
         </ul>
@@ -213,7 +212,6 @@
 </div><br></br>
 <center>
     <h1 id="h2adimin">Bienvenue sur dashboard stagiaire</h1>
-</center>
-   
+</center> 
 </body>
 </html>

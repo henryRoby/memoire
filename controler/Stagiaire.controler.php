@@ -8,7 +8,7 @@
             return $parcourir -> selectStagiaire();
         }
         public function nouvauStagiaire($id_categorie, $num_rdv, $nom_stagiaire, $prenom_stagiaire,
-        $email_stagiaire, $mdp_stagiaire, $photo)
+        $email_stagiaire, $niveau_stagiaire, $debut_stage, $fin_stage, $mdp_stagiaire, $photo)
         {
             $nouv_stagiaire = new Stagiaires();
             $nouv_stagiaire -> setId_categorie($id_categorie);
@@ -16,6 +16,9 @@
             $nouv_stagiaire -> setNom_stgiaire($nom_stagiaire);
             $nouv_stagiaire -> setPrenom_stagiaire($prenom_stagiaire);
             $nouv_stagiaire -> setEmail_stagiaire($email_stagiaire);
+            $nouv_stagiaire -> setNiveau_stagiaire($niveau_stagiaire);
+            $nouv_stagiaire -> setDebut_stage($debut_stage);
+            $nouv_stagiaire -> setFin_stage($fin_stage);
             $nouv_stagiaire -> setMdp_stagiaire($mdp_stagiaire);
             $nouv_stagiaire -> setPhoto($photo);
             $nouv_stagiaire -> nouveauStagiaire();

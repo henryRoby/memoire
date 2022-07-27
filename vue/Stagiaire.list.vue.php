@@ -8,6 +8,9 @@
         public $nom_stgiaire;
         public $prenom_stagiaire;
         public $email_stagiaire;
+        public $niveau_stagiaire;
+        public $debut_stage;
+        public $fin_stage;
         public $mdp_stagiaire;  
         public $photo;
         public function affichageStagiaire()
@@ -105,6 +108,9 @@ body {
                 <th id="thead">Nom</th>
                 <th id="thead">Prenom</th>
                 <th id="thead">Email</th>
+                <th id="thead">Niveau</th>
+                <th id="thead">Debut</th>
+                <th id="thead">Fin</th>
                 <th id="thead">Categorie</th>
             </tr>
             </thead>
@@ -122,6 +128,9 @@ body {
                 <td id="contenu">'. $chaque_elements["nom_stagiaire"].'</td>
                 <td id="contenu">'. $chaque_elements["prenom_stagiaire"].'</td>
                 <td id="contenu">'.$chaque_elements["email_stagiaire"].'</td>
+                <td id="contenu">'.$chaque_elements["niveau_stagiaire"].'</td>
+                <td id="contenu">'.$chaque_elements["debut_stage"].'</td>
+                <td id="contenu">'.$chaque_elements["fin_stage"].'</td>
                 <td id="contenu">'.$chaque_elements["types"] . '</td>
             </tr>');
             }
