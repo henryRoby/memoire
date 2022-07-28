@@ -1,13 +1,16 @@
 <?php
     include("../controler/Rendezvous.controler.php");
     include("../controler/Candidat.controler.php");
-    require_once("dashboard.admin.php");
     $erreur = "";
-    $ap_candidat = new CandControler();
-  
-    $id = $_GET["id_candidat"];
-    $retr_candidat = $ap_candidat -> Getuniquecandidat($id);
-    
+    $bool_test_new = false;
+    $candidat_ayant_rdv = new CandControler();
+    $deja_eu_rdv = $candidat_ayant_rdv -> ParcCandidat();
+    foreach ($deja_eu_rdv as $key => $value) {
+        if($_GET["id_candidat"] == $value['id_candidat'])
+        {
+            $bool_test_new = true;
+        }
+    }
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         if (empty($_POST["date"]) AND empty($_POST["heure"]))
@@ -31,9 +34,7 @@
 <head>
 <head>
     
-    <title>ajout nouveau RDV</title>
-
-    
+    <title>ajout nouveau RDV</title>    
 <style>
      body{
     background: url(../images/fond.jpg);
@@ -82,6 +83,7 @@
    }
     </style>
  <link href="navbar-top.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -95,7 +97,18 @@
   </head>
 </head>
 <body>
-    
+ <?php
+    if($bool_test_new == true)
+    {?>
+        <div class="alert alert-warning">
+            <a href="Candidat.vue.affich.php" class="close">&times;</a>
+            <strong>Attention!</strong> Cette candidat a déjà eu son rendez -vous.
+        </div>
+    <?php
+    }
+    if($bool_test_new == false)
+    {
+ ?>   
 <div class="container">
 <br>
      <center><h1 >Confirmer un Rendez-vous</h1></center> 
@@ -105,13 +118,12 @@
 
     <div class="row">
             <div class="row">
-            <div class="col-md-4">
+                <div class="col-md-4">
                     <span class="error"><?php echo $erreur;?></span>
-                    <label>Numéro de candidat</label>
                 </div>
                 
                 <div class="col-md-8">
-                <input type="text" name="id" value ="<?php echo $retr_candidat['id_candidat'] ?>" class="form-control"/>
+                <input type="text" name="hidden" value ="<?php echo $_GET["id_candidat"]; ?>" class="form-control"/>
                             
                 </div>
             </div>
@@ -142,6 +154,12 @@
             </center>
       
     </form> 
-    </div>  
+    </div>
+    <?php
+    }
+    ?>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
 </body>
 </html>
