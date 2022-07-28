@@ -56,7 +56,7 @@
 }
 </style>
 <body>
-    <div style="">
+    <div>
     <div class="">
         <h1>Categorie  du stage</h1>
     </div>

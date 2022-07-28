@@ -42,7 +42,6 @@ body{
 
 .top-nav>li {
     display: inline-block;
-    float: left;
 }
 
 .top-nav>li>a {
