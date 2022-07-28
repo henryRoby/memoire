@@ -9,13 +9,13 @@
     $connecte = $stg_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]);
     $tache_stg_con = new TacheControler();
     $aff_propre_tache = $tache_stg_con -> listeTachesParCategorie($connecte['id_categorie']);
-if(date("d/m/Y") == $connecte['fin_stage'])
+if(date("Y-m-d") == $connecte['fin_stage'])
 {
     ?>
-        <div class="row">
+        <div class="container">
             <div class="alert alert-danger">
-                <strong>Remarque !</strong> Votre stage prend fin aujord'hui,
-                c'etait bien!😊😊😎.
+                <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
+                c'etait bien non!😊😊😎.
             </div>
         </div>
     <?php
