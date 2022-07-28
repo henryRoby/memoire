@@ -12,10 +12,10 @@
 if(date("Y-m-d") == $connecte['fin_stage'])
 {
     ?>
-        <div class="container">
+        <div class="row" id="rowval">
             <div class="alert alert-danger">
                 <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
-                c'etait bien non!😊😊😎.
+                c'etait bien!😊😊😎.
             </div>
         </div>
     <?php
