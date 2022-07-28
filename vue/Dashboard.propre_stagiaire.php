@@ -1,6 +1,9 @@
 <?php
     session_start();
+    include_once("../controler/Stagiaire.controler.php");
     //var_dump($_SESSION["stagiaire_connecter"]);
+    $etre_connecter = new StaControler();
+    $unique_stagiaire = $etre_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -182,9 +185,12 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">            
             <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-angle-down"></b><img src="../images/fond.jpg" id="imagestagiaire" alt=""></a>
+                <a href="" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-angle-down">
+
+                </b><?php echo('<img src="../public/photo/'. $unique_stagiaire["photo"].'" id="imagestagiaire" alt="'.$unique_stagiaire["photo"].'">')?>
+            </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#"><i class="fa fa-fw fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i><?php echo($unique_stagiaire["prenom_stagiaire"]); ?></a></li>
                     <li><a href="Stagiaire.deconnecte.php"><i class="fa fa-fw fa-power-off" ></i> Déconnecter</a></li>
                 </ul>
             </li>

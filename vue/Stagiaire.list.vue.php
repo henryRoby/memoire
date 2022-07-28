@@ -1,5 +1,5 @@
 <?php
-    include("../controler/Stagiaire.controler.php");
+    require_once("../controler/Stagiaire.controler.php");
     require_once("dashboard.admin.php");
     class ListeStg
     {
