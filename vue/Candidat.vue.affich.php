@@ -75,6 +75,7 @@ h1 {
             </thead>
             <tbody>
 <?php
+//le bouton accepter ato n blemanlah
          foreach ($retour_tous_candidat as $chaque_elements) 
 
             {
