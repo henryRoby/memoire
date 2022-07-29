@@ -196,7 +196,7 @@
                 </b><?php echo('<img src="../public/photo/'. $unique_stagiaire["photo"].'" id="imagestagiaire" alt="'.$unique_stagiaire["photo"].'">')?>
             </a>
                 <ul class="dropdown-menu" >
-                    <li><a href="#" id="menuhorizon" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-user"></span> <?php echo($unique_stagiaire["prenom_stagiaire"]); ?><?php echo($unique_stagiaire["prenom_stagiaire"]); ?></a></li>
+                    <li><a href="#" id="menuhorizon" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-user"></span> <?php echo($unique_stagiaire["prenom_stagiaire"]); ?></a></li>
                     <li><a href="Stagiaire.deconnecte.php" id="menuhorizon"> <span class="glyphicon glyphicon-off"></span> Déconnecter</a></li>
                 </ul>
             </li>
@@ -244,7 +244,20 @@
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
                     <?php echo('<img id="reduisser" src="../public/photo/'. $unique_stagiaire["photo"].'" alt="'.$unique_stagiaire["photo"].'" class="w3-circle w3-margin-top">')?>
                 </div>
-
+                <div class="w3-container w3-border w3-large">
+                    <div class="w3-left-align">
+                        <p><?php echo("<strong>".$unique_stagiaire["nom_stagiaire"]. "</strong> " . $unique_stagiaire["prenom_stagiaire"]);?></p>
+                    </div>
+                    <div class="w3-left-align">
+                        <p>Etudiant en : <?php echo("<strong>".$unique_stagiaire["niveau_stagiaire"]. "</strong>");?></p>
+                    </div>
+                    <div class="w3-left-align">
+                        <p>Domaine Informatique : <?php echo("<strong>".$unique_stagiaire["types"]. "</strong>");?></p>
+                    </div>
+                    <div class="w3-left-align">
+                        <p>Fin de stage : <?php echo("<strong>".$unique_stagiaire["fin_stage"]. "</strong>");?></p>
+                    </div>
+                </div> 
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                     <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
