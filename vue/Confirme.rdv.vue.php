@@ -3,10 +3,10 @@
     include("../controler/Candidat.controler.php");
     $erreur = "";
     $bool_test_new = false;
-    $candidat_ayant_rdv = new CandControler();
-    $deja_eu_rdv = $candidat_ayant_rdv -> ParcCandidat();
+    $nouv_ajout_rdv = new RdvControler();
+    $deja_eu_rdv = $nouv_ajout_rdv -> listeChaqueRdv();
     foreach ($deja_eu_rdv as $key => $value) {
-        if($_GET["id_candidat"] == $value['id_candidat'])
+        if($_GET["id_candidat"] == $value['num_rdv'])
         {
             $bool_test_new = true;
         }
@@ -18,12 +18,8 @@
             $erreur = "le champ est obligatoire";
         }
         else
-        {
-            $nouv_ajout_rdv = new RdvControler();
-            
-            $nouv_ajout_rdv->ConfirmationRdv($_POST["id"], $_POST["date"], $_POST["heure"]);
-
-            
+        {            
+            $nouv_ajout_rdv->ConfirmationRdv($_POST["id"], $_POST["date"], $_POST["heure"]);    
             header('Location: Candidat.vue.affich.php');
         }
     }
