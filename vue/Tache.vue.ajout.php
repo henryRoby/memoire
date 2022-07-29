@@ -119,10 +119,10 @@ label {
         
         <div class="row">
              <div class="col-md-4">
-             <label>Durée du tâche : </label>
+             <label>Durée du tâche en heure :</label>
              </div>   
              <div class="col-md-8">
-             <input type="text" name="dure" class="form-control"/>
+             <input type="number" name="dure" class="form-control"/>
              </div>            
 
         </div>
