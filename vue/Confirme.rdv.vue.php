@@ -1,6 +1,5 @@
 <?php
     include("../controler/Rendezvous.controler.php");
-    include("../controler/Candidat.controler.php");
     $erreur = "";
     $bool_test_new = false;
     $nouv_ajout_rdv = new RdvControler();
