@@ -52,7 +52,7 @@
       .container{
         background-color: #dfdd;
         margin-top: 130px;
-        width: 40%;
+        width: 20%;
         border-radius : 20px;
         box-shadow : 5px 2px 5px 3px;
        padding-bottom : 10px;
