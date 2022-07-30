@@ -25,6 +25,10 @@
             width: 40%;
 
         }
+
+        .row{
+            margin-left:5%;
+        }
     </style>
     <?php
 if(date("Y-m-d") == $connecte['fin_stage'])
@@ -67,14 +71,26 @@ if(date("Y-m-d") == $connecte['fin_stage'])
                
 
             </div></br></br></br></br>
-            <div>
-                <?php echo ('<a href="Supression.stagiaire.vue.php?id_candidat='.$_SESSION["stagiaire_connecter"].'" class="btn btn-primary">Vueillez cliquer pour imprimer votre attéstation😘😘😘</a>') ?>
-            </div></br>
+            <button onclick="document.getElementById('id02').style.display='block'" class="btn btn-primary">Vueillez cliquer pour imprimer votre attéstation😘😘😘</button>
 
-            <div class="alert alert-danger">
-                <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
-                c'etait bien!😊😊😎.
-            </div>
+                <div id="id02" class="w3-modal">
+                    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+                    <div class="alert alert-danger">
+                        <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
+                        c'etait bien!😊😊😎.
+                    </div>                
+
+                    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                        <?php echo ('<a onclick="document.getElementById(\'id02\').style.display=\'none\'" href="Supression.stagiaire.vue.php?id_candidat='.$_SESSION["stagiaire_connecter"].'" class="btn btn-primary">D\'accord</a>') ?>   
+                   
+                    </div>
+
+                    </div>
+                </div>
+                </div>
+            <div>                
+            </div></br>
             
         </div>
         
@@ -98,6 +114,7 @@ else
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acc dash Stagiaire</title>
+    <link rel="stylesheet" href="../public/w3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -237,6 +254,7 @@ else
 
 </div>
 </div>
+
 </body>
 </html>
 <?php

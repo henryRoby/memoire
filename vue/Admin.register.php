@@ -1,6 +1,6 @@
 <?php
     $nom_admin = "Admin";
-    $mdp_admin = "Admin1234";
+    $mdp_admin = "0000";
     global $entre_nUser;
     global $entre_mdpUser;
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
