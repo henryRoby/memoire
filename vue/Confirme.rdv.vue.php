@@ -112,7 +112,7 @@
                 </div>
                 
                 <div class="col-md-8">
-                <input type="hidden" name="id" value ="<?php echo $_GET["id_candidat"]; ?>" class="form-control"/>        
+                <input type="hidden" name="id" value ="<?php echo $_GET["id_candidat"]; ?>" class="form-control"/>
                 </div>
             </div>
       </div>
