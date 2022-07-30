@@ -9,31 +9,56 @@
     $connecte = $stg_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]);
     $tache_stg_con = new TacheControler();
     $aff_propre_tache = $tache_stg_con -> listeTachesParCategorie($connecte['id_categorie']);
+    ?>
+    <style>
+        #rowval {
+            border : 10px solid #1700a0 !important;
+            margin-top : 20px;
+            padding-top: 10px;
+            padding-bottom: 50px;
+
+        }
+        #h2attes {
+            font-weight: bold;
+        }
+        #logo1 {
+            width: 40%;
+
+        }
+    </style>
+    <?php
 if(date("Y-m-d") == $connecte['fin_stage'])
 {
     ?>
-        <div class="row" id="rowval">
-            <div class="container">
-               <center><img id="logo" src="../images/randev.png" alt="">
-                    <h2>ATTESTATION DE STAGE</h2>
+        <div class="row" >
+            <div class="container" id="rowval">
+                <div id="test">
+                    <center>
+                        <img id="logo1" src="../images/randev.png" alt="">
+                    </center></br>
+                </div>
+               <center>
+                    <h2 id="h2attes">ATTESTATION DE STAGE</h2>
                 </center>
 
                     <p> Je soussigné, Mr William Arthur HARILANTONIAINA, Manager de la société Randevteam, ayant son siège au bâtiment de la 
-                        Pharmacie TSARA Andavamamba au A273 Antananarivo Madagascar, atteste que,
+                        Pharmacie TSARA Andavamamba au A273 Antananarivo Madagascar, atteste que,</br></br>
                     </p>
                 <center>
-                    <h1> Nom des stagiaire</h1>
+                    <h1 id="h2attes"> <?php
+                     echo (strtoupper($connecte["nom_stagiaire"])." ".ucwords($connecte["prenom_stagiaire"]));
+                     ?></h1></br>
                 </center>
                     <p>étudiant de l'Ecole Superiaur de Management et d'Informatique Appliqué ( ESMIA) en filière INFORMATIQUE Risque et
-                        Décision en 3ème année, a effectué un stagiare dans le cadre de ses études au sein de notre établissement RANDEVTEAM NIF 
+                        Décision en <?php echo ($connecte["niveau_stagiaire"]) ?> , a effectué un stagiare dans le cadre de ses études au sein de notre établissement RANDEVTEAM NIF 
                         3002364629 STAT 63121112016003665, en qualité de Développeur(se) Web rattachée au service Developpement Web et Framework.
-                        Le stage a eu lieu dans la période allant du <h5>Date()</h5>  au <h5>Date()</h5>
+                        Le stage a eu lieu dans la période allant du <?php echo ($connecte["debut_stage"]) ?> au <?php echo ($connecte["fin_stage"]) ?>
 
                         La dit stagiaire a bien effectué les tâches qui lui ont été attribuées, et sa rigueur et motivation a été bénéfique
                         à l'entreprise en tout point de vue.
                     </p>
                     <p>
-                        Nous délivrons la présente attestation pour servir et valoir ce que de droit.
+                        Nous délivrons la présente attéstation pour servir et valoir ce que de droit.
                     </p>
 
                     
@@ -41,10 +66,10 @@ if(date("Y-m-d") == $connecte['fin_stage'])
 
                
 
-            </div>
+            </div></br></br></br></br>
             <div>
-                <?php echo ('<a href="Supression.stagiaire.vue.php?id_candidat='.$_SESSION["stagiaire_connecter"].'" class="btn btn-primary">Vueillez cliquer pour imprimmer votre attestation😘😘😘</a>') ?>
-            </div>
+                <?php echo ('<a href="Supression.stagiaire.vue.php?id_candidat='.$_SESSION["stagiaire_connecter"].'" class="btn btn-primary">Vueillez cliquer pour imprimer votre attéstation😘😘😘</a>') ?>
+            </div></br>
 
             <div class="alert alert-danger">
                 <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
@@ -97,15 +122,17 @@ else
     
 }
 #rowval{
-    margin-top: 40px;
-    margin-left:30px;
-
+    margin-top: 10px;
+    
 }
 .h3tacheo {
     font-weight: bolder;    
     font-size : 20px;
     text-decoration : underline;
     margin-left:30px;   
+}
+#test{
+    background-color:blue;
 }
     </style>
 </head>
