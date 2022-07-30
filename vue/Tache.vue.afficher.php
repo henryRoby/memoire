@@ -115,7 +115,7 @@ body{
             <tr>
                 <td id="contenu">'. $chaque_elements["titre_tache"].'</td>
                 <td id="contenu">'.$chaque_elements["description_tache"].'</td>
-                <td id="contenu">'.$chaque_elements["dure_tache"] . '</td>
+                <td id="contenu">'.$chaque_elements["dure_tache"] .' H' .'</td>
                 <td id="contenu">'.$chaque_elements["niv_stag"] . '</td>
                 <td id="contenu"></br>
                     <a href="Tache.vue.modif.php?num_tache='.$chaque_elements["num_tache"].'" class="btn btn-primary">Modifier</a>
@@ -126,8 +126,7 @@ body{
 ?>
 </tbody>
         </table>
-        </div>
-            
+        </div> 
             <div class="col-md-2">
                 
             </div>

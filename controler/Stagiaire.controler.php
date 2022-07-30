@@ -34,5 +34,13 @@
             $get_cli = new Stagiaires();
             return $get_cli -> getStgrConnecter($id_stag);
         }
+
+        public function SuppressionStg($id_stagiaire)
+        {
+            $retr_stagiaire = new Stagiaires();
+            $retr_stagiaire -> supprimerStg($id_stagiaire);
+        }
     }
+
+
 ?>

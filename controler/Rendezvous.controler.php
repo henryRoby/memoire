@@ -31,5 +31,6 @@
     }
 
     // $test = new Rendezvous();
-    // $test ->supprimerRdv(4);
+    // $test1= $test ->listerTousLesRdv();
+    // var_dump($test1);
 ?>

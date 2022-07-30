@@ -13,11 +13,46 @@ if(date("Y-m-d") == $connecte['fin_stage'])
 {
     ?>
         <div class="row" id="rowval">
+            <div class="container">
+               <center><img id="logo" src="../images/randev.png" alt="">
+                    <h2>ATTESTATION DE STAGE</h2>
+                </center>
+
+                    <p> Je soussigné, Mr William Arthur HARILANTONIAINA, Manager de la société Randevteam, ayant son siège au bâtiment de la 
+                        Pharmacie TSARA Andavamamba au A273 Antananarivo Madagascar, atteste que,
+                    </p>
+                <center>
+                    <h1> Nom des stagiaire</h1>
+                </center>
+                    <p>étudiant de l'Ecole Superiaur de Management et d'Informatique Appliqué ( ESMIA) en filière INFORMATIQUE Risque et
+                        Décision en 3ème année, a effectué un stagiare dans le cadre de ses études au sein de notre établissement RANDEVTEAM NIF 
+                        3002364629 STAT 63121112016003665, en qualité de Développeur(se) Web rattachée au service Developpement Web et Framework.
+                        Le stage a eu lieu dans la période allant du <h5>Date()</h5>  au <h5>Date()</h5>
+
+                        La dit stagiaire a bien effectué les tâches qui lui ont été attribuées, et sa rigueur et motivation a été bénéfique
+                        à l'entreprise en tout point de vue.
+                    </p>
+                    <p>
+                        Nous délivrons la présente attestation pour servir et valoir ce que de droit.
+                    </p>
+
+                    
+
+
+               
+
+            </div>
+            <div>
+                <?php echo ('<a href="Supression.stagiaire.vue.php?id_candidat='.$_SESSION["stagiaire_connecter"].'" class="btn btn-primary">Vueillez cliquer pour imprimmer votre attestation😘😘😘</a>') ?>
+            </div>
+
             <div class="alert alert-danger">
                 <strong>Remarque !</strong> Votre stage prend fin aujourd'hui,
                 c'etait bien!😊😊😎.
             </div>
+            
         </div>
+        
     <?php
 }
 else
@@ -59,14 +94,18 @@ else
 }
 .ptache {
     font-size : 15px !important;
+    
 }
 #rowval{
     margin-top: 40px;
+    margin-left:30px;
+
 }
 .h3tacheo {
     font-weight: bolder;    
     font-size : 20px;
     text-decoration : underline;
+    margin-left:30px;   
 }
     </style>
 </head>
