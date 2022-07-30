@@ -1,7 +1,7 @@
 <?php
     include("../controler/Tache.controler.php");
     include("../controler/Categorie.controler.php");
-    require_once ("dashboard.admin.php");
+    // require_once ("dashboard.admin.php");
 
     $erreur = "";
     $num_tache = 0;
@@ -155,10 +155,18 @@ label {
             </div>
         </div></br></br>
         <center>
-            <button type="submit" class="btn btn-primary">Modifier</button>
+            <button onclick="document.getElementById('id01').style.display='block'" type="submit" class="btn btn-primary">Modifier</button>
             <a href="Tache.vue.afficher.php"  class="btn btn-danger">Annuler</a>
         </center>
   </form>
+
+
+
+
+
+
+
+ 
 </div>
 </body>
 </html>

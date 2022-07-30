@@ -17,6 +17,7 @@
             $nouv_ajout_tache = new TacheControler();
             
             $nouv_ajout_tache->nouvelleTache($_POST["id_cat"], $_POST["titre"], $_POST["description"], $_POST["dure"],$_POST["niv_stag"],True);
+            //header("Location:Tache.vue.afficher.php");
         }
     }  
 ?>
@@ -112,7 +113,7 @@ label {
                 <label>Titre du tâche : </label>
              </div>   
              <div class="col-md-8">
-                <input type="text" name="titre" class="form-control"/>
+                <input type="text" name="titre" class="form-control" required/>
              </div>            
 
         </div>
@@ -122,7 +123,7 @@ label {
              <label>Durée du tâche en heure :</label>
              </div>   
              <div class="col-md-8">
-             <input type="number" name="dure" class="form-control"/>
+             <input type="number" name="dure" class="form-control" required/>
              </div>            
 
         </div>
@@ -132,7 +133,7 @@ label {
             <label >Déscription du tâche : </label>
             </div>
             <div class="col-md-8">
-            <textarea name="description" class="form-control"></textarea>
+            <textarea name="description" class="form-control" required></textarea>
             </div>
         </div>
         <div class="row" id="desc">

@@ -107,12 +107,12 @@ body {
             <tr>
                 <th id="thead">Profil</th>
                 <th id="thead">Nom</th>
-                <th id="thead">Prenom</th>
+                <th id="thead">Prénom</th>
                 <th id="thead">Email</th>
                 <th id="thead">Niveau</th>
-                <th id="thead">Debut</th>
+                <th id="thead">Début</th>
                 <th id="thead">Fin</th>
-                <th id="thead">Categorie</th>
+                <th id="thead">Catégorie</th>
             </tr>
             </thead>
             <tbody>
