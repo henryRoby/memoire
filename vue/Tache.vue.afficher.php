@@ -65,7 +65,7 @@ h1 {
 }
   #contenu {
     text-align : center !important;
-    
+    padding-bottom: 10px;
     color: white;
    
   }

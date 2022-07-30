@@ -1,13 +1,12 @@
 <?php
     require_once("../controler/Categorie.controler.php");
-    require_once ("dashboard.admin.php");
+    // require_once ("dashboard.admin.php");
     $type_err = ""; 
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
 
         $newCategorie =  new CatControler();
         $liste = $newCategorie-> listeChaqueCategorie();
-        var_dump($liste);
 
         if (empty($_POST["type"]))
         {
@@ -26,6 +25,7 @@
             }else {
                 $newAjout = new CatControler();
                 $newAjout->checkAjoutCategorie($_POST["type"]);
+                header("Location:Stagiaire.list.vue.php");
             }
 
             
