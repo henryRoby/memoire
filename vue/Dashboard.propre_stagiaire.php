@@ -19,6 +19,8 @@
     #h2adimin {
         font-size : 50px;
         margin-top : 50px;
+        text-align:center;
+        margin-left:40px;
     }
     #wrapper {
         padding-left: 0;    
@@ -169,6 +171,10 @@
         width: 200px;
         height: 170px;
     }
+    #accueil_dash_stg{
+        /* margin-left:20px; */
+    }
+
 
 </style>
 </head>

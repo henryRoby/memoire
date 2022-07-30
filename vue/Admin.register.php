@@ -73,7 +73,7 @@ body {
                         <form id="login-form" class="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                             <h3 class="text-center text-info">CONNEXION</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Nom  d'utilisateur:</label><br>
+                                <label for="username" class="text-info">Nom d'utilisateur:</label><br>
                                 <input type="text" name="Admin" id="username" class="form-control">
                             </div>
                             <div class="form-group">

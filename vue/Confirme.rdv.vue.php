@@ -1,5 +1,6 @@
 <?php
     include("../controler/Rendezvous.controler.php");
+    include("../controler/Candidat.controler.php");
     $erreur = "";
     $bool_test_new = false;
     $nouv_ajout_rdv = new RdvControler();
@@ -44,18 +45,14 @@
         user-select: none;
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    
       .container{
         background-color: #dfdd;
         margin-top: 130px;
-        width: 20%;
+        width : 70%;
         border-radius : 20px;
         box-shadow : 5px 2px 5px 3px;
-       padding-bottom : 10px;
+       padding-bottom : 15px;
     }
     #soumettre {
         margin-bottom: 50px;
@@ -69,12 +66,9 @@
     .row {
         margin-top: 10px;
     }
-    #desc {
-        margin-bottom: 15px;
-        
-    }
+    
    #centerbtn {
-    margin-top : 15px;
+    margin-top : 20px;
    }
     </style>
  <link href="navbar-top.css" rel="stylesheet">
@@ -119,37 +113,36 @@
                 
                 <div class="col-md-8">
                 <input type="hidden" name="id" value ="<?php echo $_GET["id_candidat"]; ?>" class="form-control"/>
-                            
                 </div>
             </div>
-           
-
+      </div>
+       
+    
         <div class="row">
-             <div class="col-md-4">
-                <label>Date du rendez vous</label>
-             </div>   
-             <div class="col-md-8">
-                <input type="date" name="date" class="form-control" required/>
-             </div>            
+            <div class="col-md-3">
 
-        </div>
-        
-        <div class="row">
-             <div class="col-md-4">
-             <label>Heure du rendez vous</label>
-             </div>   
-             <div class="col-md-8">
-             <input type="text" name="heure" class="form-control" required/>
-             </div>            
-
-        </div>
-
-            <center id="centerbtn">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Date du rendez vous</label></br>
+                        <label>Heure du rendez vous</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" name="date" class="form-control" required/></br>
+                        <input type="text" name="heure" class="form-control" required/>
+                    </div>
+                </div>
+                <center id="centerbtn">
                 <button type="submit" class="btn btn-success">Ajouter</button>
             </center>
-      
-    </form> 
-    </div>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+        </form> 
+
     <?php
     }
     ?>

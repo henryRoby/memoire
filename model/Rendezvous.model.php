@@ -95,5 +95,6 @@ require_once("connexion.php");
     }
     
     // $test = new Rendezvous();
-    // $test ->supprimerRdv(3);
+    //   $test1 = $test ->listerTousLesRdv();
+    //   var_dump($test1);
 ?>

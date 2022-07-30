@@ -188,5 +188,16 @@
             $stgr_connecte -> execute(array($email_stagiaire, $mdp_stagiaire));
             return $stgr_connecte -> fetch(PDO::FETCH_ASSOC);
         }
+
+        public function supprimerStg($id_stagiaire)
+        {
+            $suppr = "DELETE FROM stagiaires WHERE id_stagiaire = ?";
+            $prep = $this -> connex -> prepare($suppr);
+            $prep -> execute(array($id_stagiaire));
+            
+        }
     }
+
+    // $test = new Stagiaires();
+    // $test1 = $test ->supprimerStg(2);
 ?>
