@@ -60,6 +60,9 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
         foreach ($reg_length as $value)
         {
             array_push($tab_em, $value['email_stagiaire']);
+        }
+        foreach ($retr_rdv as $value)
+        {
             array_push($tab_rdv, $value['num_rdv']);
         }
         $manisa = 0;
@@ -114,13 +117,13 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
           $bool_rdv = false;
           while ($manisa_rdv < count($tab_rdv)) 
           {
-            if($num_rdv == $tab_rdv[$manisa])
+            if((int)$num_rdv == (int)$tab_rdv[$manisa_rdv])
             {    
               $bool_rdv = true;
             }
             $manisa_rdv ++;
           }
-          if ($bool == true) 
+          if ($bool_rdv == true) 
           {
             echo('Oups!! un numero pour un candidat, vous êtes un escraud');
           }
