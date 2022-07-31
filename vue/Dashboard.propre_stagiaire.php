@@ -4,6 +4,17 @@
     //var_dump($_SESSION["stagiaire_connecter"]);
     $etre_connecter = new StaControler();
     $unique_stagiaire = $etre_connecter -> suisConnecter($_SESSION["stagiaire_connecter"]); 
+    
+    $date = date("Y-m-d");
+    $datenow = new DateTime($date);
+    $debut_stage = new DateTime($unique_stagiaire["debut_stage"]);
+    $fin_stage = new DateTime($unique_stagiaire["fin_stage"]);
+    $interval_date_debut_ala_fin = $debut_stage -> diff($fin_stage);
+    $interval_date = $datenow -> diff($fin_stage);
+    $nombre_jour = $interval_date -> days;
+    $date_complet = $interval_date_debut_ala_fin -> days;
+    $Totalite_heure = $date_complet * 8;
+    $heure_de_travail = $nombre_jour * 8;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -223,7 +234,12 @@
 <div class="container" id="accueil_dash_stg">
     <div class="row">
         <center>
-            <h1 id="h2adimin">Bienvenue sur dashboard stagiaire</h1>
+            <h1 id="h2adimin">Bonjour <?php
+                echo(strtoupper($unique_stagiaire["nom_stagiaire"]) ." ". ucwords($unique_stagiaire["prenom_stagiaire"]));
+            ?></h1>
+            <p><?php
+                echo(" Vous avez " .$Totalite_heure. " heure pour votre stage et il vous reste ".$heure_de_travail." heure pour finir");
+            ?></p>
         </center>
     </div>
     <div class="row">

@@ -11,8 +11,14 @@
     $aff_propre_tache = $tache_stg_con -> listeTachesParCategorie($connecte['id_categorie']);
     ?>
     <style>
-        #rowval {
+        #rowval1 {
             border : 10px solid #1700a0 !important;
+            margin-top : 20px;
+            padding-top: 10px;
+            padding-bottom: 50px;
+
+        }
+        #rowval {
             margin-top : 20px;
             padding-top: 10px;
             padding-bottom: 50px;
@@ -35,7 +41,7 @@ if(date("Y-m-d") == $connecte['fin_stage'])
 {
     ?>
         <div class="row" >
-            <div class="container" id="rowval">
+            <div class="container" id="rowval1">
                 <div id="test">
                     <center>
                         <img id="logo1" src="../images/randev.png" alt="">
