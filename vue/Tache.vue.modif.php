@@ -53,6 +53,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <title>Modification tâche</title>
     <style>
     .bd-placeholder-img {
@@ -101,36 +104,43 @@ label {
     width: 85%;
     
 }
+body{
+    background: url(../images/fond.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
     </style>
 </head>
 <body>
-<div class="container" id="container-modif">
-<center><h1 id="idmodif">Modification du tâche</h1></center> 
+<div class="container" id="container-modif"> 
 
     <div class="container-fluid">
+    <center><h1 id="idmodif">Modification du tâche</h1></center>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?num_tache=<?php echo $num_tache ?>"></br></br>
-        <div class="row">
+        <div >
         <span class="error"><?php echo $erreur;?></span>
-            <div class="col-md-4">
-                <label>Choix Catégorie :</label>
-            </div>
-            <div class="col-md-8">
-            <select name="id_categorie" class="form-control">
-                <?php
-                    foreach ($retour_categorie as $chaque_elements) 
-                    {
-                        echo('<option value =" ' .$chaque_elements['id_categorie'] . ' ">' .$chaque_elements['types'] . '</option>');
-                    }
-                ?>
-        </select>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Choix Catégorie :</label>
                 </div>
+                <div class="col-md-8">
+                    <select name="id_categorie" class="form-control">
+                        <?php
+                            foreach ($retour_categorie as $chaque_elements) 
+                            {
+                                echo('<option value =" ' .$chaque_elements['id_categorie'] . ' ">' .$chaque_elements['types'] . '</option>');
+                            }
+                        ?>
+                    </select>
+                </div>
+            </div>    
         </div>
         <div class="row">
             <div class="col-md-4">
                 <label>Titre du tâche : </label>
             </div>
             <div class="col-md-8">
-                <input type="text" name="titre_tache" value="<?php echo !empty($titre_tache)?$titre_tache:'';?>" class="form-control" class="form-control"/>
+                <input type="text" required name="titre_tache" value="<?php echo !empty($titre_tache)?$titre_tache:'';?>" required class="form-control"/>
                 </div>
         </div>
         <div class="row">
@@ -138,7 +148,7 @@ label {
                 <label >Déscription du tâche : </label>
             </div>
             <div class="col-md-8">
-                <textarea name="description_tache" value="" class="form-control"><?php echo !empty($description_tache)?$description_tache:'';?></textarea>
+                <textarea name="description_tache" required value="" class="form-control"><?php echo !empty($description_tache)?$description_tache:'';?></textarea>
             </div>
         </div>
         <div class="row">
@@ -146,12 +156,12 @@ label {
                 <label>Durée du tâche : </label>
             </div>
             <div class="col-md-8">
-                <input type="text" name="dure_tache" value="<?php echo !empty($dure_tache)?$dure_tache:'';?>" class="form-control"/>
+                <input type="text" name="dure_tache" required value="<?php echo !empty($dure_tache)?$dure_tache:'';?>" class="form-control"/>
             </div>
         </div></br></br>
         <div class="row">
             <div class="col-md-8">
-                <input type="hidden" name="niv_stag" value="<?php echo !empty($niv_stag)?$niv_stag:'';?>" class="form-control"/>
+                <input type="hidden" name="niv_stag" required value="<?php echo !empty($niv_stag)?$niv_stag:'';?>" class="form-control"/>
             </div>
         </div></br></br>
         <center>
