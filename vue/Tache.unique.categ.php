@@ -165,11 +165,13 @@ else
     <h3 class="h3tacheo">Listes des tâches à faire :</h3>
 <div class="row" id="rowval">
     <?php
+    $remaque = true;
         foreach ($aff_propre_tache as $key => $value)
          
         {
             if($connecte["niveau_stagiaire"] == $value["niv_stag"])
             { 
+                $remarque = true;
                 if($value["visibilite"] == 1)
                 {
                     ?>
@@ -244,17 +246,19 @@ else
             }
             else
             {
-                ?>
-                    <div class="row">
-                        <div class="alert alert-info">
-                            <strong>Remarque !</strong> Vous n'avez pas encore
-                            des taches à faire 😊😊😎.
-                        </div>
-                    </div>
-                <?php
+                $remaque = false;
             }
-        
-
+        }
+        if(!$remaque)
+        {
+            ?>
+                <div class="row">
+                    <div class="alert alert-info">
+                        <strong>Remarque !</strong> Vous n'avez pas encore
+                        des taches à faire 😊😊😎.
+                    </div>
+                </div>
+            <?php
         }
     ?>
 
