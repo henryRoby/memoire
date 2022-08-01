@@ -113,29 +113,29 @@ if($_SERVER["REQUEST_METHOD"] && isset($_FILES['photo']) == "POST")
       <?php
         }else
         {
-          $manisa_rdv = 0;
-          $bool_rdv = false;
-          while ($manisa_rdv < count($tab_rdv)) 
-          {
-            if((int)$num_rdv == (int)$tab_rdv[$manisa_rdv])
-            {    
-              $bool_rdv = true;
-            }
-            $manisa_rdv ++;
-          }
-          if ($bool_rdv == true) 
-          {
-            echo('Oups!! un numero pour un candidat, vous êtes un escraud');
-          }
-          else
-          {
+          // $manisa_rdv = 0;
+          // $bool_rdv = false;
+          // while ($manisa_rdv < count($tab_rdv)) 
+          // {
+          //   if((int)$num_rdv == (int)$tab_rdv[$manisa_rdv])
+          //   {    
+          //     $bool_rdv = true;
+          //   }
+          //   $manisa_rdv ++;
+          // }
+          // if ($bool_rdv == true) 
+          // {
+          //   echo('Oups!! un numero pour un candidat, vous êtes un escraud');
+          // }
+          // else
+          // {
             $chemin = "../public/photo/".basename($photo);
             move_uploaded_file($_FILES["photo"]["tmp_name"],$chemin);
             $registre_des_stagiaire = new StaControler();
             $registre_des_stagiaire -> nouvauStagiaire($id_categorie, $num_rdv, $nom_stagiaire, $prenom_stagiaire,
             $email_stagiaire,$niveau_stagiaire,$debut_stage,$fin_stage, $mdp_stagiaire, $photo);
               header("location: Connexion.vue.stagiaire.php");
-          }
+          // }
      
         }
       }

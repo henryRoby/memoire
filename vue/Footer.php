@@ -14,9 +14,9 @@
 <h3>Contact</h3>
         <center>
         <p>
-        Al irfane 1 complexe Doha route boukhalef, Tanger<br/>
-                  90000 / Tanger<br/>
-                N° Tél : 06 19 24 23 92 <br/>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam fuga, placeat nostrum quod totam excepturi,
+   <br/><br/>
+                N° Tél : +261 34 98 784 08<br/>
                  recrutement@gmail.com<br/>
         </p>
         </center>
